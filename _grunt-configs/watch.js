@@ -8,59 +8,49 @@ module.exports.tasks = {
 	watch: {
 		options: {
 			interrupt: true,
-			spawn: false,
+			spawn: false
 		},
 
 		scss: {
 			files: ['<%=config.css.scssDir%>/**/*.scss'],
 			tasks: [
-				'bsNotify:sassStart',
-				'postscss',
-				'bsReload:css',
-				'filesizegzip:css',
-			],
+				'compileCSS',
+				'clean:tempCSS'
+			]
 		},
+		sections: {
+			files: ['index_base.html','section/index_section.html'],
+			tasks: [
+				'compileCSS',
+				'clean:tempCSS',
+				'bake'
+			]
+		},
+
 
 		js: {
-			files: [
-				'<%=config.js.distDir%>/**/*.js',
-			],
+			files: ['<%=config.js.fileList%>'],
 			tasks: [
-				'bsReload:all',
-				'filesizegzip:js',
-			],
+				'uglify',
+				'newer:copy:modernizr'
+			]
 		},
 
-		images: {
+		images : {
 			files: ['<%=config.img.srcDir%>/**/*.{svg,png,jpg,gif}'],
-			tasks: [
-				'newer:imagemin:images',
-				'bsReload:all',
-			],
+			tasks: ['newer:imagemin:images']
+		},
+
+		grunticon : {
+			files: ['<%=config.img.grunticonDir%>/**/*.{svg,png,jpg,gif}'],
+			tasks: ['icons']
 		},
 
 		grunt: {
 			files: ['_grunt-configs/*.js', 'Gruntfile.js'],
 			options: {
-				reload: true,
-			},
-		},
-	},
-
-	// Browsersync reload
-	bsReload: {
-		css: {
-			reload: '<%=config.distDir%>/css/*.css',
-		},
-		all: {
-			reload: true,
-		},
-	},
-
-	// Browsersync notify
-	bsNotify: {
-		sassStart: {
-			notify: 'Please wait, compiling Sass!',
-		},
-	},
+				reload: true
+			}
+		}
+	}
 };

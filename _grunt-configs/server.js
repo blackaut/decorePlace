@@ -1,53 +1,66 @@
 module.exports.tasks = {
 
 	/**
+	 * ftp deploy 
+	 * https://www.npmjs.com/package/grunt-ftp-deploy
+	 */
+	bake: {
+	  build: {
+	    files: {
+			'index.html' : 'index_base.html',
+			'section/index.html' : 'section/index_section.html'
+			}
+		}
+	},
+
+	'ftp-deploy': {
+			  build: {
+			    auth: {
+			      host: 'server.com',
+			      port: 21,
+			      authKey: 'key1'
+			    },
+			    src: '<%=config.distDir%>',
+			    dest: '/html/uploadTest/',
+			    exclusions: ['<%=config.distDir%>/**/.DS_Store', '<%=config.distDir%>/**/Thumbs.db', 'path/to/dist/tmp']
+			  }
+		},
+
+	/**
 	 * browserSync
 	 * http://www.browsersync.io/docs/options/
 	 * http://www.browsersync.io/docs/grunt/
 	 */
-	browserSync: {
-		options: {
-			watchTask: true,
-			notify: {
-				styles: [
-					'pointer-events: none',
-					'position: fixed',
-					'bottom: 0',
-					'left: 0',
-					'right: 0',
-					'text-align: center',
-					'background-color: #181830',
-					'color: #fff',
-					'padding: 15px',
-				],
-			},
-		},
 
+
+	browserSync: {
 		serve: {
 			bsFiles: {
 				src: [
-					'<%=config.distDir%>/{js,img}/**/*.*',
-					'**/*.html',
-				],
+					'<%=config.distDir%>/**/*.*',
+					'**/*.html'
+				]
 			},
 			options: {
-				server: './',
-			},
+				watchTask: true,
+				server: './'
+			}
 		},
 
 		styleguide: {
 			bsFiles: {
 				src: [
-					'<%=config.distDir%>/{js,img}/*.*',
-					'*.html',
-				],
+					'<%=config.distDir%>/**/*.*',
+					'*.html'
+				]
 			},
 			options: {
+				watchTask: true,
 				server: {
 					baseDir: './',
-					index: 'styleguide/index.html',
-				},
-			},
-		},
-	},
+					index: 'styleguide/index.html'
+				}
+			}
+		}
+	}
 };

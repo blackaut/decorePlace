@@ -1,19 +1,7 @@
-/**
- * Grunt tasks:
- * - grunt                   : The default task. Alias for `grunt serve` task below
- * - grunt serve             : watch files and run a static server
- * - grunt watcher           : watch files without static server
- * - grunt compile           : compile scss, js & compress images
- * - grunt compile --release : same as above, but compress CSS as well
- * - grunt styleguide        :
- * - grunt images            : compress all images
- * - grunt test              : run jshint and scsslint
- */
-
 module.exports = function (grunt) {
 	'use strict';
 
-	require('time-grunt')(grunt); // Record how long tasks take
+	var opn = require('opn');
 
 	var options = {
 		pkg: require('./package'), // <%=pkg.name%>
@@ -23,7 +11,7 @@ module.exports = function (grunt) {
 	};
 
 	// Load grunt tasks automatically
-	require('load-grunt-tasks')(grunt);
+	require('load-grunt-tasks')(grunt, {pattern: ["grunt-*", "chotto"]});
 
 	// Load grunt configurations automatically
 	var configs = require('load-grunt-configs')(grunt, options);
@@ -33,70 +21,153 @@ module.exports = function (grunt) {
 
 
 	/**
-	 * The tasks
+	 * Available tasks:
+	 * grunt            : Alias for 'serve' task, below (the default task)
+	 * grunt serve      : watch js, images & scss and run a local server
+	 * grunt start      : Opens the post-install setup checklist on the Kickoff site
+	 * grunt watch      : run sass:kickoff, uglify and livereload
+	 * grunt dev        : run uglify, sass:kickoff & autoprefixer:kickoff
+	 * grunt deploy     : run jshint, uglify, sass:kickoff and csso
+	 * grunt styleguide : watch js & scss, run a local server for editing the styleguide
+	 * grunt images     : compress all non-grunticon images & then run `grunt icons`
+	 * grunt icons      : generate the icons. uses svgmin and grunticon
+	 * grunt checks     : run jshint, scsslint and html validator
+	 * grunt travis     : used by travis ci only
 	 */
+	
 
-	// grunt
+
+	/**
+	 * GRUNT * Alias for 'serve' task, below
+	 */
 	grunt.registerTask('default', ['serve']);
 
 
-	// grunt serve
+	/**
+	 * GRUNT SERVE * A task for a static server with a watch
+	 * run browserSync and watch
+	 */
 	grunt.registerTask('serve', [
-		'compile',
+		'shimly',
+		'compileJS',
+		'compileCSS',
+		'clean:tempCSS',
+		'copy:modernizr',
+		//'images',
+		'bake:build',
 		'browserSync:serve',
-		'watch',
+		'watch'
+
 	]);
 
 
-	// grunt watcher
-	grunt.registerTask('watcher', [
-		'compile',
-		'watch',
-	]);
 
 
-	// grunt compile
-	grunt.registerTask('compile', [
-		'browserify',
-		'postscss',
-		'images',
-		'copy:jsStandalone',
-	]);
-
-
-	// grunt start
+	/**
+	 * GRUNT START
+	 * Opens the post-install setup checklist on the Kickoff site
+	 */
 	grunt.registerTask('start', function() {
-		var opn = require('opn');
-		opn('http://trykickoff.com/learn/checklist.html');
+		opn('http://trykickoff.github.io/learn/checklist.html');
 	});
 
 
-	// grunt styleguide
-	grunt.registerTask('styleguide', [
-		'compile',
-		'browserSync:styleguide',
-		'watch',
-	]);
-
-
-	// grunt images
-	grunt.registerTask('images', [
-		'newer:imagemin:images',
+	/**
+	 * GRUNT DEV * A task for development
+	 * run uglify, sass:kickoff & autoprefixer:kickoff
+	 */
+	grunt.registerTask('dev', [
+		'shimly',
+		'compileJS',
+		'compileCSS',
+		'clean:tempCSS',
+		'copy:modernizr',
+		'images'
 	]);
 
 
 	/**
-	 * grunt test
+	 * GRUNT DEPLOY * A task for your production environment
+	 * run uglify, sass, autoprefixer and csso
 	 */
-	grunt.registerTask('test', [
-		'eslint',
+	grunt.registerTask('deploy', [
+		'shimly',
+		'compileJS',
+		'compileCSS',
+		'csso',
+		'clean:tempCSS',
+		'copy:modernizr',
+		'images'
+	]);
+
+
+	/**
+	 * GRUNT STYLEGUIDE * A task to view the styleguide
+	 */
+	grunt.registerTask('styleguide', [
+		'shimly',
+		'compileJS',
+		'compileCSS',
+		'clean:tempCSS',
+		// 'images',
+		'browserSync:styleguide',
+		'watch'
+	]);
+
+
+	/**
+	 * GRUNT IMAGES * A task to compress all non-grunticon images
+	 */
+	grunt.registerTask('images', [
+		'newer:imagemin:images',
+		'icons'
+	]);
+
+
+	/**
+	 * GRUNT ICONS * A task to create all icons using grunticon
+	 */
+	grunt.registerTask('icons', [
+		'clean:icons',
+		'newer:imagemin:grunticon',
+		'grunticon'
+	]);
+
+
+	/**
+	 * GRUNT CHECKS * Check code for errors
+	 * run jshint
+	 */
+	grunt.registerTask('checks', [
+		'jshint:project',
 		'scsslint',
+		'validation'
 	]);
 
 
-	// grunt travis
+	/**
+	 * Travis CI to test build
+	 */
 	grunt.registerTask('travis', [
-		'postscss',
-		'eslint',
+		'jshint:project',
+		'uglify',
+		'sass:kickoff'
 	]);
+
+	/**
+	 * Utility classes
+	 */
+	// Compile JS
+	grunt.registerTask('compileJS', [
+		'chotto:js',
+		'uglify',
+	]);
+
+	// Compile CSS
+	grunt.registerTask('compileCSS', [
+		'sass',
+		'autoprefixer'
+	]);
+
+
 };

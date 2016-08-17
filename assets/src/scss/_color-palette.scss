@@ -1,52 +1,41 @@
-/**
- * Global Color palette
- * - Generic colors
- * - Color scheme
- * - Common colors
- * - Links
- * - Text selection
- * - <hr>
- * - Any others..
- */
+// =================================
+// Color palette
+// =================================
 
 // Generic colors
 $blue                         : #288ad6;
 $green                        : #16c98d;
 $red                          : #fa5e5b;
 $yellow                       : #feef6d;
-$orange                       : #fe7c08;
+$orange                       : #e67e22;
 $pink                         : #ff708e;
 $purple                       : #8e44ad;
 $gray                         : #95a5a6;
 
+
 // Color Scheme
-$color-primary                : #181830;
-$color-secondary              : $orange;
-$color-highlight              : $blue;
+$color-primary                : black;
+
+$color-secondary              : grey;
+$color-highlight              : white;
+
 
 // Common colors
-$color-text                   : #444;
-$color-bg                     : #f1f1f1;
+$color-text                   : $color-primary;
+$color-bg                     : white;
 $color-border                 : #ddd;
-
-
-// Links
-$color-link-default           : $color-highlight;
-$color-link-visited           : $color-link-default;
-$color-link-hover             : darken($color-link-default, 20%);
-$color-link-active            : darken($color-link-default, 20%);
 
 // Text Selection
 $color-selection              : #fff;
-$color-selection-bg           : $color-primary;
+$color-selection-bg           :$color-secondary;
+
+
+// Links
+$color-link-default           :$color-secondary;
+$color-link-visited           :$color-secondary;
+$color-link-hover             : darken($color-secondary, 20%);
+$color-link-active            : darken($color-secondary, 20%);
 
 
 // <hr> border color
-$hr-color                     : lighten(#000, 70%);
-
-// 3rd party brand colors - find more at brandcolors.net
-$color-twitter                : #55acee;
-$color-facebook               : #3b5998;
-$color-youtube                : #cd201f;
-$color-pinterest              : #bd081c;
-$color-instagram              : #3f729b;
+$hr-border                    : lighten(#000, 70%);

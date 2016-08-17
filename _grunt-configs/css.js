@@ -1,46 +1,72 @@
-var postscss = require('postscss');
-var autoprefixer = require('autoprefixer');
-var cssnano = require('cssnano');
-// Add your own postcss plugins here
-
-module.exports = function (grunt, options) {
+module.exports.tasks = {
 
 	/**
-	 * PostScss
-	 * https://github.com/nicbell/postscss
+	 * Sass compilation using grunt-sass
+	 * https://github.com/sindresorhus/grunt-sass
+	 * Includes fabzoff.scss and fabzoff-old-ie.scss by default
 	 */
-	return grunt.registerTask('postscss', 'Compiles SASS and runs postcss.', function () {
-		var done = this.async();
+	sass: {
+		fabzoff: {
+			options: {
+				outputStyle: 'nested',
+				precision : 10,
+				sourceMap : true
+			},
+			files: {
+				'<%=config.tempDir%>/css/<%=config.css.distFile%>.css'       : '<%=config.css.scssDir%>/fabzoff.scss',
+				// Remove the line below if you are supporting <IE9
+				'<%=config.tempDir%>/css/<%=config.css.distFile%>-old-ie.css': '<%=config.css.scssDir%>/fabzoff-old-ie.scss'
+			}
+		},
 
-		var scssDir = grunt.config.process(options.config.css.scssDir);
-		var cssDir = grunt.config.process(options.config.css.distDir);
-		var cssDistFile = grunt.config.process(options.config.css.distFile);
-
-		var plugins = [
-			autoprefixer({ browsers: options.config.css.autoprefixer }),
-			// Add your own postcss plugins here
-		];
-
-		// Release flag, use cssnano
-		// e.g. `grunt compile --release`
-		if (grunt.option('release')) {
-			plugins.push(cssnano({discardComments: {removeAll: true}}));
+		styleguide: {
+			options: {
+				outputStyle: 'compressed',
+				precision : 10,
+			},
+			files: {
+				'<%=config.tempDir%>/css/styleguide.css' : '<%=config.css.scssDir%>/styleguide.scss'
+			}
 		}
+	},
 
-		postscss(plugins).processMany([
-			{
-				from: scssDir + '/kickoff.scss',
-				to: cssDir + '/' + cssDistFile + '.css',
+
+	/**
+	 * Autoprefixer
+	 * https://github.com/nDmitry/grunt-autoprefixer
+	 * https://github.com/postcss/autoprefixer
+	 * Auto prefixes your CSS using caniuse data
+	 */
+	autoprefixer: {
+		options: {
+			browsers: '<%=config.css.autoprefixer%>',
+			map: true
+		},
+
+		fabzoff: {
+			expand: true,
+			flatten: true,
+			src: '<%=config.tempDir%>/css/*.css',
+			dest: '<%=config.css.distDir%>/'
+		}
+	},
+
+
+	/**
+	 * CSSO
+	 * https://github.com/t32k/grunt-csso
+	 * Minify CSS files with CSSO
+	 */
+	csso: {
+		dist: {
+			options: {
+				restructure: false //turns structural optimisations off as can mess up fallbacks http://bem.info/tools/optimizers/csso/description/
 			},
-			{
-				from: scssDir + '/styleguide.scss',
-				to: cssDir + '/styleguide.css',
+			files: {
+				'<%=config.css.distDir%>/<%=config.css.distFile%>.css'       : '<%=config.css.distDir%>/<%=config.css.distFile%>.css',
+				// Remove the line below if you are supporting <IE9
+				'<%=config.css.distDir%>/<%=config.css.distFile%>-old-ie.css': '<%=config.css.distDir%>/<%=config.css.distFile%>-old-ie.css'
 			},
-		])
-		.then(done)
-		.catch(function(error) {
-			grunt.log.error('\n' + error.formatted + '\n');
-			done(false);
-		});
-	});
+		}
+	}
 };

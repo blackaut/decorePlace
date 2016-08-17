@@ -5,7 +5,10 @@ module.exports.tasks = {
 	 * https://github.com/gruntjs/grunt-contrib-clean
 	 * Clean some files
 	 */
-	clean: {},
+	clean: {
+		icons   : ['<%=config.distDir%>/img/icons', '<%=config.tempDir%>/icons'],
+		tempCSS : ['<%=config.tempDir%>/css']
+	},
 
 
 	/**
@@ -13,29 +16,21 @@ module.exports.tasks = {
 	 * https://github.com/gruntjs/grunt-contrib-copy
 	 */
 	copy: {
-		jsStandalone: {
-			files: [{
-				expand: true,
-				cwd: '<%=config.srcDir%>/js/standalone',
-				src: ['./**/*.*'],
-				dest: '<%=config.js.distDir%>/standalone',
-			}],
-		},
+		modernizr: {
+			src: '<%=config.srcDir%>/js/libs/modernizr.min.js',
+			dest: '<%=config.distDir%>/js/libs/modernizr.min.js'
+		}
 	},
 
 
 	/**
-	 * grunt-filesizegzip
-	 * https://github.com/mrmartineau/grunt-filesizegzip
-	 * Output the normal & gzipped file size of a given file
+	 * Chotto
+	 * Checks for the existence of files and halts the Grunt build if they don't exist
+	 * https://www.npmjs.com/package/chotto
 	 */
-	filesizegzip: {
-		js: {
-			src: '<%=config.js.distDir%><%=config.js.distFile%>',
-		},
-
-		css: {
-			src: '<%=config.css.distDir%>/<%=config.css.distFile%>.css',
-		},
-	},
+	chotto : {
+		js : {
+			filePaths: '<%=config.js.fileList%>'
+		}
+	}
 };
