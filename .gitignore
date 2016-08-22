@@ -27,4 +27,5 @@ node_modules/*
 nbproject
 Thumbs.db
 logs
+.Iconr
 *.log
