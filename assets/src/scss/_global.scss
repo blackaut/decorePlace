@@ -41,7 +41,7 @@
 footer {
 
 	// UNCOMENT THIS TO MAKE THE FOOTER VISIBLE
-	display:none;
+	// display:none;
 
 	text-align: center;
 	width: 100%;
@@ -64,7 +64,7 @@ body, html {
 
 header {
 
-	border:1px black solid;
+	 border-bottom:1px black solid;
 	position:absolute;
 	top:0;
 	height: 98px;
@@ -138,7 +138,7 @@ header {
 .loader:before {
   width: 5.2em;
   height: 10.2em;
-  background: black;
+  background: $color-primary;
   border-radius: 10.2em 0 0 10.2em;
   top: -0.1em;
   left: -0.1em;
