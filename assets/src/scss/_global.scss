@@ -14,7 +14,8 @@
 // $bp-mid               : 768;  // Set in px
 // $bp-wide              : 992;  // Set in px
 // $bp-huge              : 1600; // Set in px
- 
+
+
 // background colours 
 .bg-primary {
 
@@ -41,7 +42,7 @@
 footer {
 
 	// UNCOMENT THIS TO MAKE THE FOOTER VISIBLE
-	// display:none;
+	display:none;
 
 	text-align: center;
 	width: 100%;
@@ -58,32 +59,97 @@ body, html {
 
 }
 
+.site-menu {
+	width:100%;
+	border-top:1px $color-highlight solid;
+	display: flex; 
+	justify-content: space-between;
+	padding: 0 30px; 
+}
+
+.menu-btn {
+
+	font-family: 'Montserrat-Hairline';
+	text-transform: uppercase;
+	color:$color-primary;
+
+	}
 
 
 /// header 
 
+/// login box 
+.login-box {
+
+	float: right;
+	margin: 25px 50px 0px 0px;
+	// border: 1px solid red;
+
+}
+.login-box-icon {
+	width:35px;
+	display: inline-block;
+}
+.login-text {
+	font-family: 'Montserrat-Hairline';
+	color:$color-primary;
+	cursor:pointer;
+}
+
+/// search 
+.search-box {
+
+	float: left;
+	margin: 25px 0px 0px 50px;
+	// border: 1px solid red;
+}
+.search-box-icon {
+	width:35px;
+	display: inline-block;
+}
+
+.search-text {
+	border:none;
+	border-bottom: $color-primary 2px solid;
+
+}
+
+// logo header
+.header-logo {
+    display: inline-block;
+    margin: 0 auto;
+}
+
+.logo-header-shield {
+	padding-top:20px;
+	display:block;
+	width:10vw;
+	margin: 0 auto;
+
+}
+
+.logo-header-type {
+
+	width:15vw;
+	margin: 0 auto;
+
+}
+
 header {
 
-	 border-bottom:1px black solid;
-	position:absolute;
+	position:fixed;
 	top:0;
-	height: 98px;
+	height: 100px;
 	text-align: center;
 	width: 100%;
 	margin: auto;
+
 }
-
-
-.logo-header {
-	width: 100px;
-}
-
 
 
 // for mutilang support
 .menu-lang { 
-
-
+	display:none;
 	position:fixed;
 	top:24px;
 	right:20px;
