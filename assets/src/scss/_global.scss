@@ -15,7 +15,28 @@
 // $bp-wide              : 992;  // Set in px
 // $bp-huge              : 1600; // Set in px
 
+// home
 
+.category-avatar {
+	height:200px;
+	background-color:$color-highlight;
+}
+
+
+
+//  helpers columns
+
+.one-column {
+	width:100%;
+}
+
+.two-column {
+	width:48%;
+}
+
+.three-column {
+	width:30%;
+}
 // background colours 
 .bg-primary {
 
@@ -36,14 +57,34 @@
 	background-color:$color-darklight;
 }
 
+.bg-gray-gradient {
+
+	background: linear-gradient(to bottom, rgba(255,255,255,0) 0%,rgba(0,0,0,0.1) 100%);
+}
+
+
+
+.login-box-icon-svg {
+	width:30px;
+}
+
+
+.slideshow {
+
+	height:500px;
+}
 
 /// footer
  
+
+.footer-endline {
+
+}
+
 footer {
 
 	// UNCOMENT THIS TO MAKE THE FOOTER VISIBLE
-	display:none;
-
+	// display:none;
 	text-align: center;
 	width: 100%;
 	overflow:visible;
