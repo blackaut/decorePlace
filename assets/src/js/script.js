@@ -17,11 +17,14 @@
 	$(function() {
 
 		// initial functions 
-		FBZ.control.readFromGoogleDocs();
 		FBZ.control.determineSection();
 		FBZ.control.onResizeStage();
 		FBZ.control.defineStage();
 		FBZ.control.resizeContentBlock();
+		FBZ.control.init();
+
+		FBZ.control.multilingualEngine(); 
+		FBZ.control.removeLoadingCurtain();
 
 	});// END DOC READY
 	
@@ -79,7 +82,7 @@
 				FBZ.model.desktopMode = false;
 
 			// if this brakpoint condition is met display the tablet mode	
-			}else if(FBZ.model.stageW < FBZ.model.swapToTabletBreakpoint) { 
+			} else if (FBZ.model.stageW < FBZ.model.swapToTabletBreakpoint) { 
 
 				console.log("tablet");
 
@@ -87,7 +90,7 @@
 				FBZ.model.tabletMode = true;
 				FBZ.model.desktopMode = false;
 
-			}else {
+			} else {
 
 				FBZ.model.mobileMode = false;
 				FBZ.model.tabletMode = false;
@@ -152,14 +155,7 @@
 					element.addClass("is-hidden");
 				}, time);
 		},
-		parseBrain : function () {
 
-			// triggers the init func
-			FBZ.control.init();
-			FBZ.control.multilingualEngine(); 
-			FBZ.control.removeLoadingCurtain();
-			//FBZ.control.updateLanguage();
-		},
 
 		fadeHide : function (el) { 
 
@@ -180,19 +176,6 @@
 
 				el.removeClass("is-fading-in");
 			}, 701);
-		},
-
-
-		readFromGoogleDocs : function () { 
-
-			// https://docs.google.com/spreadsheets/d/1T0qB23t_Lc17VrtnybisyjVsfufbM3trJ9QGNjJUspo/pubhtml
-
-			Tabletop.init( { key: 'https://docs.google.com/spreadsheets/d/1T0qB23t_Lc17VrtnybisyjVsfufbM3trJ9QGNjJUspo/pubhtml',
-				callback: function(data, tabletop) { 
-					console.dir(data) 
-					FBZ.model.noBrain = data;
-					FBZ.control.parseBrain();
-				} } )
 		},
 
 		multilingualEngine : function () {
