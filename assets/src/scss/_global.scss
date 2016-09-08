@@ -22,6 +22,11 @@
 .category-avatar {
 	height:200px;
 	background-color:$color-highlight;
+	display:inline-block;
+	margin:10px;
+
+	font-size:0.8em;
+
 }
 
 //  helpers columns
@@ -31,7 +36,7 @@
 }
 
 .two-column {
-	width:48%;
+	width:47%;
 }
 
 .three-column {
@@ -74,21 +79,70 @@
 }
 
 // slideshow product
+
+.item-name {
+	font-family:"Montserrat-Light";
+	margin-bottom:0;
+
+
+}
+
+.item-price {
+	font-family:"Montserrat-Regular";
+	margin:0;
+
+}
+
+.item-brand {
+	font-family:"Montserrat-Hairline";
+	margin:0;
+	color:$color-secondary;
+}
+
+.feature-product {
+	margin: 0 auto;
+	padding-top:100px;
+}
+
+
+
 .slideshow {
 
 	height:500px;
 	text-align: center;
 }
 
+
 .product-image {
-	width:50%;
+	width:40%;
+	float:none;
 }
 
 .slideshow-product {
-	float:left;
+}
+
+.buy-button {
+	background-color:transparent;
+	border:2px solid $color-secondary;
+	color: $color-secondary;
+	padding:5px 10px;
+	font-size:0.7em;
+}
+
+.product-info {
+	display:inline-block;
+	text-align: left;
+	width:20%;
+    vertical-align: top;
+    padding-top: 100px;
 }
 
 /// footer
+
+.logo-tsf {
+	float:right;
+	width:100px;
+}
 
 .footer-top {
 	padding: 50px 0;
@@ -177,7 +231,10 @@
 
 
 .footer-logos {
-
+	display:inline-block;
+	position:relative;
+	top:50px;
+	width:50%;
 }
 
 
@@ -191,7 +248,13 @@
 
 	background-color:$color-highlight;
 	height:100%;
+	width:100%;
 	padding:25px;
+	
+}
+.footer-nav {
+
+	width:50%;
 }
 
 .logo-footer-shield {
@@ -241,6 +304,19 @@ body, html {
 
 }
 
+
+h4 {
+	text-align:center;
+	padding: 20px;
+	font-size:1.2em;
+}
+
+h3 {
+	font-family:"Montserrat-Light";
+	color: $color-primary;
+	font-size:0.9em;
+	text-transform:uppercase;
+}
 
 li {
 	list-style-type: none;
