@@ -16,24 +16,39 @@
 // $bp-huge              : 1600; // Set in px
 
 .favourite-products-slideshow {
-	border:1px solid blue;
-	overflow:hidden;
-	 white-space: nowrap;  
-}
 
+	overflow:hidden;
+	white-space: nowrap;
+	position:relative; 
+	margin:0 60px; 
+}
 
 .arrow {
 
+	// position:relative;
+	// top:50%;
+	// transform: translateY(-50%);
+	z-index:10;
+	height:100%;
+
+	img {
+		height:40px;
+		position:absolute;
+		top:50%;
+		transform: translateY(-50%);
+		// vertical-align: middle;
+	}
 }
 .arrow-left {
-
+	left:10px;
 }
-
 
 .arrow-right {
-
+	right:10px;
+	img {
+		transform:rotateY(180deg);
+	}
 }
-
 
 
 // marcas y artistas 
@@ -176,13 +191,16 @@ bold {
 }
 
 .favourite-box-icon {
-	width:15px;
+	width:30px;
 	display: inline-block;
-	transform:translateY(10px);
+	// transform:translateY(10px);
 	position:absolute;
 	top:5px;
 	right:5px;
 	z-index:20;
+}
+.favourite-slideshow-container {
+	
 }
 
 
@@ -226,12 +244,14 @@ bold {
 
 .product-image-favourite {
 
-		width:300px;
+	width:300px;
+	display:block;
 }
 .product-info-favourite {
 	display:inline-block;
 	text-align: center;
 	width:100%;
+	z-index:20;
 }
 
 
