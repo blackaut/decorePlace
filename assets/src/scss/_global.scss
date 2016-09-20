@@ -15,6 +15,75 @@
 // $bp-wide              : 992;  // Set in px
 // $bp-huge              : 1600; // Set in px
 
+.favourite-products-slideshow {
+	border:1px solid blue;
+	overflow:hidden;
+	 white-space: nowrap;  
+}
+
+
+.arrow {
+
+}
+.arrow-left {
+
+}
+
+
+.arrow-right {
+
+}
+
+
+
+// marcas y artistas 
+.ver-marcas-y-artistas {
+	text-align:center;
+	margin-bottom: 20px;
+}
+
+.marcas-artistas {
+	text-align:center;
+	padding: 0;
+	margin:0;
+}
+
+
+.offer-products-text {
+	text-align:center;
+	font-family:"Montserrat-Light";
+	background-color:white;
+	width:60%;
+	height:60%;
+	top:20%;
+	left:20%;
+	position:absolute;
+	display:inline-block;
+	padding-top: 14%;
+}
+
+bold {
+	font-family: "Montserrat-Regular";	
+}
+
+.marcas-list {
+	text-align: center;
+	li {
+		display: inline;
+	}
+}
+
+.square-list {
+	position:relative;
+	width:200px;
+	height:200px;
+	display:inline-block;
+	text-align:center;
+	background-color:$color-highlight;
+}
+
+ 
+
 // home
 
 
@@ -24,7 +93,6 @@
 	background-color:$color-highlight;
 	display:inline-block;
 	margin:10px;
-
 	font-size:0.8em;
 
 }
@@ -99,12 +167,49 @@
 	color:$color-secondary;
 }
 
+
+
 .feature-product {
 	margin: 0 auto;
 	padding-top:100px;
+
+}
+
+.favourite-box-icon {
+	width:15px;
+	display: inline-block;
+	transform:translateY(10px);
+	position:absolute;
+	top:5px;
+	right:5px;
+	z-index:20;
 }
 
 
+.favourite-product {
+	width:250px;
+	padding:0 25px;
+	position:relative;
+	display:inline-block;
+
+	.item-name {
+		font-size: .7em;
+	}
+
+	.item-price {
+		font-size: .5em;
+
+	}
+
+	.item-brand {
+		font-size: .5em;
+	}
+
+	&:hover {
+		background-color:$color-highlight;
+		transition:all 1s;
+	}
+}
 
 .slideshow {
 
@@ -115,8 +220,20 @@
 
 .product-image {
 	width:40%;
+	max-width:400px;
 	float:none;
 }
+
+.product-image-favourite {
+
+		width:300px;
+}
+.product-info-favourite {
+	display:inline-block;
+	text-align: center;
+	width:100%;
+}
+
 
 .slideshow-product {
 }
@@ -250,7 +367,7 @@
 	height:100%;
 	width:100%;
 	padding:25px;
-	
+
 }
 .footer-nav {
 
