@@ -257,8 +257,9 @@ bold {
 /// footer
 
 .logo-tsf {
-	float:right;
-	width:100px;
+    float: right;
+    width: 140px;
+    margin-top: 10px;
 }
 
 .footer-top {
@@ -350,8 +351,9 @@ bold {
 .footer-logos {
 	display:inline-block;
 	position:relative;
-	top:50px;
 	width:50%;
+	height:100%;
+	float: right;
 }
 
 
@@ -372,6 +374,7 @@ bold {
 .footer-nav {
 
 	width:50%;
+	display: inline-block;
 }
 
 .logo-footer-shield {
