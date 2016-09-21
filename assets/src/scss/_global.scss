@@ -24,27 +24,26 @@
 }
 
 .arrow {
-
-	// position:relative;
+	 position:relative;
 	// top:50%;
 	// transform: translateY(-50%);
 	z-index:10;
-	height:100%;
+	border:1px solid;
 
 	img {
 		height:40px;
 		position:absolute;
 		top:50%;
-		transform: translateY(-50%);
+		//  transform: translateY(-50%);
 		// vertical-align: middle;
 	}
 }
 .arrow-left {
-	left:10px;
+	float:left;
 }
 
 .arrow-right {
-	right:10px;
+	float:right;
 	img {
 		transform:rotateY(180deg);
 	}
