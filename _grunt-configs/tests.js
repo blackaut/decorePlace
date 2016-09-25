@@ -26,7 +26,7 @@ module.exports.tasks = {
 		},
 		project: [
 			'<%=config.srcDir%>/js/**/*.js',
-			'!<%=config.srcDir%>/js/{libs,helpers}/**/*.js',
+			'!<%=config.srcDir%>/js/{libs,sections,helpers}/**/*.js',
 			'!<%=config.srcDir%>/js/**/*.min.js'
 		]
 	},

@@ -53,6 +53,7 @@ module.exports = function (grunt) {
 		'compileCSS',
 		'clean:tempCSS',
 		'copy:modernizr',
+		'copy:sections',
 		//'images',
 		'bake:build',
 		'browserSync:serve',
