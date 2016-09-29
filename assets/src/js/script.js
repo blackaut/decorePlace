@@ -84,10 +84,7 @@
 			
 				// get the form data
 				var formData = {
-					'first_name'				: "$('input[name=first_name]').val()",
-					'last_name'					: "$('input[name=last_name]').val()",
-					'email'						: "$('input[name=email]').val()",
-					'comments'					: "$('#comments').val()"
+					'comments'					: "comunicacion"
 				};
 
 				//console.dir(formData);
