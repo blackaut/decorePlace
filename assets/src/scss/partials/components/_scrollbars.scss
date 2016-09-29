@@ -5,8 +5,8 @@
 ::-webkit-scrollbar {
 	width: 10px;
 	height: 10px;
-	border: 2px solid white;
-	// background-color: darken($color-bg, 10%);
+	background: rgba($color-primary,0.2);;
+	// background-color: darken($$color-primary, 10%);
 
 	// display:none;
 
@@ -18,9 +18,9 @@
 }
 
 ::-webkit-scrollbar-thumb {
-	 background: white; // arken($color-bg, 40%);
+	background: $color-secondary; // arken($color-bg, 40%);
 	cursor: pointer;
-	border: 1px solid white;
+	// border: 1px solid white;
 	width: 10px;
 	// display:none;
 

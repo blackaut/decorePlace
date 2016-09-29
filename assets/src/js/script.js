@@ -119,7 +119,7 @@
 
 			} else {
 					FBZ.model.currentSection  = section[section.length-2];
-				FBZ.control.injectSectionScript(section[section.length-1]);
+				FBZ.control.injectSectionScript(FBZ.model.currentSection);
 			}
 
 			FBZ.model.currentArticule  = section[section.length-1];
@@ -128,8 +128,8 @@
 
 		injectSectionScript : function (jsname){
 
-				console.log(jsname);
-				$.getScript("/assets/dist/js/sections/inspiracion.js");
+				console.log("js :",jsname);
+				$.getScript(jsname+".js");
 		},
 
 

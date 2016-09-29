@@ -9,10 +9,12 @@ module.exports.tasks = {
 	    files: {
 			'index.html' : 'index_base.html',
 			'checkout/index.html' : 'checkout/index_section.html',
+			'contacto/index.html' : 'contacto/index_section.html',
 			'inspiracion/index.html' : 'inspiracion/index_section.html',
 			'mi-cuenta/index.html' : 'mi-cuenta/index_section.html',
 			'nosotros/index.html' : 'nosotros/index_section.html',
 			'plazos-de-entrega/index.html' : 'plazos-de-entrega/index_section.html',
+			'politicas-de-cambio/index.html' : 'politicas-de-cambio/index_section.html',
 			'preguntas-frecuentes/index.html' : 'preguntas-frecuentes/index_section.html',
 			'productos/index.html' : 'productos/index_section.html',
 			'registro/index.html' : 'registro/index_section.html',
