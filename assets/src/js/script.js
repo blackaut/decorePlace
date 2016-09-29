@@ -25,6 +25,8 @@
 
 		FBZ.control.multilingualEngine(); 
 		FBZ.control.removeLoadingCurtain();
+		FBZ.control.formFunctionality();
+
 
 	});// END DOC READY
 	
@@ -69,6 +71,65 @@
 		init : function () {
 			console.debug('FabzOff is running');
 		},
+
+
+
+			// process the form
+		formFunctionality:function(event) {
+
+				console.log("formFunctionality running");
+				// stop the form from submitting the normal way 
+				// event.preventDefault();
+
+			
+				// get the form data
+				var formData = {
+					'first_name'				: "$('input[name=first_name]').val()",
+					'last_name'					: "$('input[name=last_name]').val()",
+					'email'						: "$('input[name=email]').val()",
+					'comments'					: "$('#comments').val()"
+				};
+
+				//console.dir(formData);
+
+				// process the form
+				$.ajax({
+					type 		: 'POST', // define the type of HTTP verb we want to use (POST for our form)
+					url 		: 'http://192.168.1.215/json/', // the url where we want to POST
+					data 		: formData, // our data object
+					dataType 	: 'json', // what type of data do we expect back from the server
+					encode 		: true
+				})
+
+				// using the done promise callback
+				.always(function(data) {
+						// log data to the console so we can see
+						//console.dir(data);
+						FBZ.control.clearFormAndDisplayThankYouMessage(data.responseText);
+						}
+					)
+		},
+
+
+		clearFormAndDisplayThankYouMessage:function(data) { 
+
+	
+			console.log("clearFormAndDisplayThankYouMessage");
+				// 		// clean the fields
+				// $('input[name=first_name]').val('');
+				// $('input[name=last_name]').val('');
+				// $('input[name=email]').val('');
+				// $('#comments').val('');
+				// // hide the form
+				// $(".form").hide();
+				// // create the answer
+				// KO.Config.$overlayerContact.prepend("<div class='email-sent'>"+data+"<div class='form-actions text_centre'><input value='< go back' class='show-form-btn btn btn--primary form_el'/></div></div>");
+				// KO.Config.$wrapper.find(".email-sent").find(".show-form-btn").click(KO.Config.showFormAgain);
+
+		},
+
+
+
 
 		detectPlatform : function () {
 
