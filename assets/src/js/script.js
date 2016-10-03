@@ -26,6 +26,7 @@
 		FBZ.control.multilingualEngine(); 
 		FBZ.control.removeLoadingCurtain();
 		FBZ.control.formFunctionality();
+		FBZ.control.headerTransform();
 
 
 	});// END DOC READY
@@ -72,7 +73,42 @@
 			console.debug('FabzOff is running');
 		},
 
+		headerTransform : function () {
+			$(window).on('wheel', FBZ.control.collapseHeader );
+		},
 
+		collapseHeader : function(e) {
+
+
+		
+			var delta = e.originalEvent.deltaY;
+
+				if (delta > 0) {
+						// function() { FBZ.control.updateScrollPosition("up") }.debounce(150);
+						// FBZ.control.updateScrollPosition("up")
+				}else { 
+						// function() { FBZ.control.updateScrollPosition("down") }.debounce(150);
+					FBZ.control.updateScrollPosition("down");
+				}
+		},
+
+		updateScrollPosition : function (direction) {
+
+			console.log(direction);
+			// console.log( $(document).scrollTop() );
+				$(window).off('wheel', FBZ.control.collapseHeader );
+
+			 $(".logo-header-shield").addClass("active"); 
+			 $(".search-box").addClass("active"); 
+			 $(".login-box").addClass("active"); 
+			 $(".masthead").addClass("active"); 
+
+		},
+
+		compactHeader : function () {
+
+
+		},
 
 			// process the form
 		formFunctionality:function(event) {
