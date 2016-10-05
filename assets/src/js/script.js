@@ -102,6 +102,7 @@
 			 $(".search-box").addClass("active"); 
 			 $(".login-box").addClass("active"); 
 			 $(".masthead").addClass("active"); 
+			 $("section").addClass("active"); 
 
 		},
 

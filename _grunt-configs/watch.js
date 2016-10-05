@@ -27,6 +27,66 @@ module.exports.tasks = {
 			]
 		},
 
+		checkout: {
+			files: ['index_base.html','checkout/index_section.html'],
+			tasks: [
+				'compileCSS',
+				'clean:tempCSS',
+				'bake'
+			]
+		},
+		contacto: {
+			files: ['index_base.html','contacto/index_section.html'],
+			tasks: [
+				'compileCSS',
+				'clean:tempCSS',
+				'bake'
+			]
+		},
+
+		includes: {
+			files: ['index_base.html','includes/index_section.html'],
+			tasks: [
+				'compileCSS',
+				'clean:tempCSS',
+				'bake'
+			]
+		},
+		inspiracion: {
+			files: ['index_base.html','inspiracion/index_section.html'],
+			tasks: [
+				'compileCSS',
+				'clean:tempCSS',
+				'bake'
+			]
+		},
+
+		nosotros: {
+			files: ['index_base.html','nosotros/index_section.html'],
+			tasks: [
+				'compileCSS',
+				'clean:tempCSS',
+				'bake'
+			]
+		},
+		productos: {
+			files: ['index_base.html','productos/index_section.html'],
+			tasks: [
+				'compileCSS',
+				'clean:tempCSS',
+				'bake'
+			]
+		},
+
+		registro: {
+			files: ['index_base.html','registro/index_section.html'],
+			tasks: [
+				'compileCSS',
+				'clean:tempCSS',
+				'bake'
+			]
+		},
+
 
 		js: {
 			files: ['<%=config.js.fileList%>'],
