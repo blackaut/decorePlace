@@ -14,6 +14,38 @@
 // $bp-mid               : 768;  // Set in px
 // $bp-wide              : 992;  // Set in px
 // $bp-huge              : 1600; // Set in px
+
+// terminos 
+
+.terminos-ul {
+	width: 80vw; //padding:20px;
+}
+
+// nosotros 
+
+.nosotros-textbox {
+	display:inline-block;
+	
+	padding: 20px;
+	p {
+	font-size:0.8em;
+	}
+}
+
+.nosotros-picture {
+	padding:20px;
+}
+
+.float-left {
+	float:left;
+}
+
+
+.float-right {
+	float:right;
+}
+
+
 section {
 
 	transition:all 1s;
