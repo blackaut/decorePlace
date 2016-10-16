@@ -54,10 +54,20 @@ input[type=number]::-webkit-outer-spin-button {
 }
 
 
-.form {
-	margin: 0 0 $baseline;
-	background-color:$color-primary;
+.form-el {
+	font-family: 'Montserrat-Hairline';
+	
+	margin-bottom:4px;
+	color: $color-secondary;
+}
 
+
+.form {
+
+		font-family: 'Montserrat-Hairline';
+
+	margin: 0 0 $baseline;
+	// background-color:$color-primary;
 
 	&:focus {
 		height: 100%;
@@ -111,8 +121,9 @@ input[type=number]::-webkit-outer-spin-button {
 .form-label {
 	display: block;
 	// margin-bottom: $baseline / 2;
-	color: $label-textColor;
+	color: $color-secondary;
 	font-weight: bold;
+	font-size:0.8em;
 
 	small {
 		font-weight: normal;
@@ -125,17 +136,16 @@ input[type=number]::-webkit-outer-spin-button {
 	display: block;
 	width: 100%;
 	height: 1em;
-	padding: .5em;
-	border: 1px solid;
+	padding: 0.8em;
+	border:1px solid $color-secondary;
+	font-family:"Montserrat-Light";
 
 	@include font-size($type-base);
-	font-family: 'aldrichregular';
 	line-height: $leading-base;
 	color: $color-primary;
 	font-weight: normal;
 	vertical-align: baseline;
 
-	background-color: $input-bgColor;
 	//border: 2px solid $input-borderColor;
 	// border-radius: 5px;
 	background-clip: padding-box;
@@ -148,10 +158,8 @@ input[type=number]::-webkit-outer-spin-button {
 	}
 
 	&:focus {
-		border-color: white;
 		outline: 0;
 		outline: thin dotted \9; // IE6-9
-		color:white;
 	}
 
 	&[type="image"],
@@ -341,13 +349,10 @@ input[type="submit"] {
 
 	font-size:1em;
 	height:25px;
-	font-family: 'aldrichregular';
 	float: right;
 	padding-right:5px;
 	margin-right:0;
-
 	.btn {
-		margin-right: 10px;
 	}
 }
 
