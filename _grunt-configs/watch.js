@@ -61,6 +61,14 @@ module.exports.tasks = {
 			]
 		},
 
+		micuenta: {
+			files: ['index_base.html','micuenta/index_section.html'],
+			tasks: [
+				'compileCSS',
+				'clean:tempCSS',
+				'bake'
+			]
+		},
 		nosotros: {
 			files: ['index_base.html','nosotros/index_section.html'],
 			tasks: [
@@ -69,6 +77,32 @@ module.exports.tasks = {
 				'bake'
 			]
 		},
+		plazosdeentrega: {
+			files: ['index_base.html','plazosdeentrega/index_section.html'],
+			tasks: [
+				'compileCSS',
+				'clean:tempCSS',
+				'bake'
+			]
+		},
+		politicasdecambio: {
+			files: ['index_base.html','politicasdecambio/index_section.html'],
+			tasks: [
+				'compileCSS',
+				'clean:tempCSS',
+				'bake'
+			]
+		},
+
+		preguntasfrecuentes: {
+			files: ['index_base.html','preguntasfrecuentes/index_section.html'],
+			tasks: [
+				'compileCSS',
+				'clean:tempCSS',
+				'bake'
+			]
+		},
+
 		productos: {
 			files: ['index_base.html','productos/index_section.html'],
 			tasks: [
