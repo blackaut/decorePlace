@@ -15,6 +15,37 @@
 // $bp-wide              : 992;  // Set in px
 // $bp-huge              : 1600; // Set in px
 
+
+// plazos de entrega
+
+.mapa-chile {
+	margin-left:10vw;
+	svg {
+		height:150vh;
+	}
+}
+.text-plazos-de-entrega {
+	float:right;
+	width: 30vw;
+	margin-right:10vw;
+}
+
+
+// preguntas frecuentes 
+
+.question-wrapper {
+	overflow:hidden;
+}
+.question {
+	
+}
+.anwser {
+	height:0;
+	&.active {
+		height: auto;
+	}
+}
+
 // contacto
 
 .contacto {
