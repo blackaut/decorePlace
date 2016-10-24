@@ -14,7 +14,28 @@
 // $bp-mid               : 768;  // Set in px
 // $bp-wide              : 992;  // Set in px
 // $bp-huge              : 1600; // Set in px
+// lightbox 
 
+.close-button-lightbox {
+	position:absolute;
+	top: 20px;
+    right: 20px;
+    width: 25px;
+    z-index: 910;
+    cursor: pointer;
+}
+
+#lightbox {
+    position:fixed; /* keeps the lightbox window in the current viewport */
+    top:0; 
+    left:0; 
+    width:100%; 
+    height:100%;
+    background-color: rgba(255,255,255,0.9); 
+    text-align:center;
+    z-index: 900;
+    opacity:0;
+}
 
 // plazos de entrega
 
@@ -135,7 +156,9 @@ section {
 	list-style-type: none;
     font-family: 'Montserrat-Light';
     font-size: 1em;
-
+	ul {
+		display: none;
+	}
 }
 
 
@@ -356,8 +379,6 @@ bold {
 }
 
 
-
-
 .box-icon {
 	width:30px;
 	display: inline-block;
@@ -374,6 +395,8 @@ bold {
 	padding:0 25px;
 	position:relative;
 	display:inline-block;
+	text-align: center;
+	cursor: pointer;
 
 	.item-name {
 		font-size: .7em;
@@ -420,7 +443,16 @@ bold {
 	z-index:20;
 }
 
+.products-container {
+	.product-info {
+		display:inline-block;
+		text-align: center;
+		width:100%;
+		z-index:20;
+		padding: 20px 0;
+	}
 
+}
 
 .slideshow-product {
 }
@@ -941,12 +973,13 @@ header {
 
 .is-fading-out { 
 
-	transition: all 700ms ease-out;
-	opacity:0;
+	animation: animFadeOut 500ms ease-out;
+	animation-fill-mode: forwards;
+	backface-visibility: hidden;
 }
 .is-fading-in { 
 
-	animation: animFadeIn 700ms ease-out;
+	animation: animFadeIn 500ms ease-out;
 	animation-fill-mode: forwards;
 	backface-visibility: hidden;
 }

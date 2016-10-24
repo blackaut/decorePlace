@@ -16,17 +16,8 @@
 
 	$(function() {
 
-		// initial functions 
-		FBZ.control.determineSection();
-		FBZ.control.onResizeStage();
-		FBZ.control.defineStage();
-		FBZ.control.resizeContentBlock();
+		// this function triggers everything
 		FBZ.control.init();
-
-		FBZ.control.multilingualEngine(); 
-		FBZ.control.removeLoadingCurtain();
-		FBZ.control.formFunctionality();
-		FBZ.control.headerTransform();
 
 
 	});// END DOC READY
@@ -53,6 +44,7 @@
 		// value holders
 		swapToMobileBreakpoint:420,
 		swapToTabletBreakpoint:1024,
+		products : {},
 
 	};
 
@@ -70,8 +62,50 @@
 	FBZ.control = {
 		// add function here
 		init : function () {
-			console.debug('FabzOff is running');
+			console.debug('DecorePlace is running');
+
+
+		// initial functions 
+		FBZ.control.determineSection();
+		FBZ.control.onResizeStage();
+		FBZ.control.defineStage();
+		FBZ.control.readProducts();
+
+		FBZ.control.resizeContentBlock();
+		FBZ.control.multilingualEngine(); 
+		FBZ.control.removeLoadingCurtain();
+		// FBZ.control.formFunctionality();
+		FBZ.control.headerTransform();
+
 		},
+
+
+		readProducts : function () {
+			FBZ.model.products = {
+
+
+			"prod_id":"33",
+			"prod_short_name":"Sillon",
+			"prod_nombre":"Sillon de Cuero",
+			"prod_codigo":"3424",
+			"prod_descripcion":"",
+			"prod_imagen"
+			"prod_link"
+			"prod_publicado"
+			"prod_en_existencia"
+			"prod_ingreso"
+			"prod_precio"
+			"prod_categoria"
+			"prod_meta_title"
+			"prod_meta_description"
+			"prod_meta_keywords"
+			"prod_estado"
+
+
+
+			}
+		},
+
 
 		headerTransform : function () {
 			$(window).on('wheel', FBZ.control.collapseHeader );
@@ -94,7 +128,7 @@
 
 		updateScrollPosition : function (direction) {
 
-			console.log(direction);
+			// console.log(direction);
 			// console.log( $(document).scrollTop() );
 				$(window).off('wheel', FBZ.control.collapseHeader );
 
@@ -167,10 +201,10 @@
 
 		detectPlatform : function () {
 
-			console.log("js platform detection : ");
+			// console.log("js platform detection : ");
 			if(FBZ.model.stageW < FBZ.model.swapToMobileBreakpoint) {
 
-				console.log("mobile");
+				// console.log("mobile");
 				// boolean to control the vertical positioning
 				FBZ.model.mobileMode = true;
 				FBZ.model.tabletMode = false;
@@ -179,7 +213,7 @@
 			// if this brakpoint condition is met display the tablet mode	
 			} else if (FBZ.model.stageW < FBZ.model.swapToTabletBreakpoint) { 
 
-				console.log("tablet");
+				// console.log("tablet");
 
 				FBZ.model.mobileMode = false;
 				FBZ.model.tabletMode = true;
@@ -191,7 +225,7 @@
 				FBZ.model.tabletMode = false;
 				FBZ.model.desktopMode = true;
 
-				console.log("desktop");
+				// console.log("desktop");
 
 			}
 
@@ -269,6 +303,22 @@
 				el.addClass("is-hidden");
 				el.removeClass("is-fading-out");
 			}, 701);
+		},
+
+		fadeDivRemove : function (el) { 
+
+			if(el.hasClass("is-fading-in") )  {
+					el.removeClass("is-fading-in");
+					el.css("offsetWidth" , el.get(0).offsetWidth);
+				}
+			el.addClass("is-fading-out");
+
+			setTimeout(function() {
+				
+				el.removeClass("is-fading-out");
+				$( "div" ).remove( el.selector );
+
+			}, 501);
 		},
 
 		fadeShow : function (el) { 
