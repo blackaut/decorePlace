@@ -123,7 +123,7 @@ module.exports.tasks = {
 
 
 		js: {
-			files: ['<%=config.js.fileList%>'],
+			files: ['<%=config.js.fileList%>','productos/productos.js'],
 			tasks: [
 				'uglify',
 				'newer:copy:modernizr'
