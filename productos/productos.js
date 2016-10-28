@@ -5,7 +5,9 @@
 	});// END DOC READY
 
 	FBZ.view.productos = $(".products-container");
-
+	FBZ.view.productosSidebar = $(".productos-sidebar");
+	FBZ.model.prod_categorias = [];
+	FBZ.view.currentSidebar; 
 
 	FBZ.products = {
 
@@ -23,32 +25,48 @@
 			var i;
 
 			for (i = 0; i < acc.length; i++) {
-			    acc[i].onclick = function(){
-			        this.classList.toggle("active");
-			        this.nextElementSibling.classList.toggle("show");
-			    }
+				acc[i].onclick = function(){
+					this.classList.toggle("active");
+					this.nextElementSibling.classList.toggle("show");
+				}
 			}
-		}, 
+		},
 
 		populate : function () {
 
 				// iterate to inject all the products defined
 				$.each(FBZ.model.products, function(key,value) {
-				    // console.log(key, "dmidd ",value);
-				    FBZ.products.injectProduct(value,key);
-				    FBZ.products.injectCategory(value);
+					// console.log(key, "dmidd ",value);
+					FBZ.products.injectProduct(value,key);
+					FBZ.products.injectCategory(value);
+
 				});
 
 				FBZ.view.product = $(".product");
-				FBZ.view.product.on("click",FBZ.products.createProductBox); 
-
+				FBZ.view.product.on("click",FBZ.products.createProductBox);
 
 		},
 
 		injectCategory : function (obj) {
 
-			// console.log("category", obj.prod_categoria);
+			if ( FBZ.model.prod_categorias.indexOf(obj.prod_categoria) == -1 ) {
 
+					// FBZ.model.prod_categorias.push(obj.prod_categoria);
+					//returns -1 if element is not found, otherwise returns its index
+					FBZ.view.currentSidebar = "<h2 class='sidebar-category-product accordion'>"+obj.prod_categoria+"</h2><ul class='panel " +obj.prod_categoria+"'></ul>";
+					FBZ.view.productosSidebar.append(FBZ.view.currentSidebar); 
+			}
+
+						// <ul class='panel' >
+						// 	<li class='element-category-product'>product 1</li>
+						// 	<li class='element-category-product'>product 2</li>
+						// 	<li class='element-category-product'>product 3</li>
+						// 	<li class='element-category-product'>product 4</li>
+						// 	<li class='element-category-product'>product 5</li>
+						// </ul>
+
+			// console.log("category", obj.prod_categoria);
+			console.log(FBZ.model.prod_categorias.push(obj.prod_categoria));
 		},
 
 		injectProduct : function (obj,key) {
@@ -62,7 +80,6 @@
 						// 	<img srcset='assets/img/bg_mision_med.png' alt='piramid-bg'/>
 						// </picture>
 			var currentProduct = 
-
 								"<div class='product' productId='"+obj.prod_id+"' productKey='"+key+"'>"+
 									"<div class='box-icon icon-heart'>"+
 										"<img class='login-box-heart-svg' src='/assets/img/heart.svg' alt='heart'/>"+
@@ -82,6 +99,12 @@
 								"</div>";
 			// console.log(currentProduct);
 			FBZ.view.productos.append(currentProduct);
+			
+			var $currentCategory = $("."+ obj.prod_categoria);
+			console.log($currentCategory,"<li class='element-category-product'><a>"+obj.prod_nombre+"</a></li>");
+		
+
+			$currentCategory.append("<li class='element-category-product'><a>"+obj.prod_nombre+"</a></li>");
 		},
 
 		createProductBox : function (e) {

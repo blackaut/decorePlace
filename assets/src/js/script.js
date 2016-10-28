@@ -19,7 +19,6 @@
 		// this function triggers everything
 		FBZ.control.init();
 
-
 	});// END DOC READY
 	
 	FBZ.model = {
@@ -80,6 +79,8 @@
 		},
 
 
+
+
 		readProducts : function () {
 
 			FBZ.model.products.producto1 = {
@@ -100,7 +101,7 @@
 			"prod_en_existencia":"", // stock del producto
 			"prod_ingreso":"", // fecha de ingreso al producto
 			"prod_precio":"7000", // precio del producto 
-			"prod_categoria":"dormitorio", // categoria
+			"prod_categoria":"dormitorio niños", // categoria
 			"prod_meta_title":"", // para el search
 			"prod_meta_description":"", // search
 			"prod_meta_keywords":"",  // search 
@@ -129,7 +130,7 @@
 			"prod_en_existencia":"", // stock del producto
 			"prod_ingreso":"", // fecha de ingreso al producto
 			"prod_precio":"7000", // precio del producto 
-			"prod_categoria":"", // categoria
+			"prod_categoria":"living", // categoria
 			"prod_meta_title":"", // para el search
 			"prod_meta_description":"", // search
 			"prod_meta_keywords":"",  // search 
@@ -157,7 +158,7 @@
 			"prod_en_existencia":"", // stock del producto
 			"prod_ingreso":"", // fecha de ingreso al producto
 			"prod_precio":"7000", // precio del producto 
-			"prod_categoria":"", // categoria
+			"prod_categoria":"living", // categoria
 			"prod_meta_title":"", // para el search
 			"prod_meta_description":"", // search
 			"prod_meta_keywords":"",  // search 
@@ -185,7 +186,7 @@
 			"prod_en_existencia":"", // stock del producto
 			"prod_ingreso":"", // fecha de ingreso al producto
 			"prod_precio":"7000", // precio del producto 
-			"prod_categoria":"", // categoria
+			"prod_categoria":"comedor", // categoria
 			"prod_meta_title":"", // para el search
 			"prod_meta_description":"", // search
 			"prod_meta_keywords":"",  // search 
@@ -212,7 +213,7 @@
 			"prod_en_existencia":"", // stock del producto
 			"prod_ingreso":"", // fecha de ingreso al producto
 			"prod_precio":"7000", // precio del producto 
-			"prod_categoria":"", // categoria
+			"prod_categoria":"living", // categoria
 			"prod_meta_title":"", // para el search
 			"prod_meta_description":"", // search
 			"prod_meta_keywords":"",  // search 
@@ -240,7 +241,7 @@
 			"prod_en_existencia":"", // stock del producto
 			"prod_ingreso":"", // fecha de ingreso al producto
 			"prod_precio":"7000", // precio del producto 
-			"prod_categoria":"", // categoria
+			"prod_categoria":"living", // categoria
 			"prod_meta_title":"", // para el search
 			"prod_meta_description":"", // search
 			"prod_meta_keywords":"",  // search 
@@ -268,7 +269,7 @@
 			"prod_en_existencia":"", // stock del producto
 			"prod_ingreso":"", // fecha de ingreso al producto
 			"prod_precio":"7000", // precio del producto 
-			"prod_categoria":"", // categoria
+			"prod_categoria":"dormitorio ", // categoria
 			"prod_meta_title":"", // para el search
 			"prod_meta_description":"", // search
 			"prod_meta_keywords":"",  // search 
@@ -296,7 +297,7 @@
 			"prod_en_existencia":"", // stock del producto
 			"prod_ingreso":"", // fecha de ingreso al producto
 			"prod_precio":"7000", // precio del producto 
-			"prod_categoria":"", // categoria
+			"prod_categoria":"living", // categoria
 			"prod_meta_title":"", // para el search
 			"prod_meta_description":"", // search
 			"prod_meta_keywords":"",  // search 
@@ -325,7 +326,7 @@
 			"prod_en_existencia":"", // stock del producto
 			"prod_ingreso":"", // fecha de ingreso al producto
 			"prod_precio":"7000", // precio del producto 
-			"prod_categoria":"", // categoria
+			"prod_categoria":"comedor", // categoria
 			"prod_meta_title":"", // para el search
 			"prod_meta_description":"", // search
 			"prod_meta_keywords":"",  // search 

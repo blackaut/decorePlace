@@ -165,11 +165,6 @@ section {
 
 // accordeon 
 
-
-   
-
-
-
 .productos {
 	display:block;
 	width:100%;
@@ -180,18 +175,20 @@ section {
 .productos-sidebar {
 	height:100vh;
 	float:left;
-	// width:30vw;
+	width:30vw;
 	display:inline-block;
 	// background-color:$color-highlight;
 	list-style-type: none;
 	font-family: 'Montserrat-Light';
 	font-size: 0.7em;
 
-
 }
 
 .sidebar-category-product {
 
+
+margin:0!important;
+	margin-bottom: 0!important;
 	// height:100%;
 	float:left;
 	// width:30vw;
@@ -233,10 +230,15 @@ section {
 .panel {
     padding: 0 18px;
     background-color: white;
-     display: none;
+   	display: none;
     height: 0;
-    transition: 0.6s ease-in-out;
-    opacity: 0;
+	transition: 0.6s ease-in-out;
+	opacity: 0;
+	user-select: none;
+
+	a li {
+		user-select: none;
+    }
 
     &.show  {
     	display: block;
