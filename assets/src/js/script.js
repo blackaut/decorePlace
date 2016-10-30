@@ -124,7 +124,7 @@
 			"prod_imagen_1000":"/assets/img/productos/lampara/big_1000/lampara01.png",// imagen grande
 			"prod_imagen_500":"/assets/img/productos/lampara/med_500/lampara01.png", // imagen mediana
 			"prod_imagen_200":"/assets/img/productos/lampara/small_200/lampara01.png", // imagen chica
-			"prod_link":"velador", // url especifica producto
+			"prod_link":"lampara", // url especifica producto
 			"prod_publicado":"true", // si es publico o privado
 			"prod_material":"madera de pino",
 			"prod_en_existencia":"", // stock del producto
@@ -152,7 +152,7 @@
 			"prod_imagen_1000":"/assets/img/productos/Velador02/big_1000/velador15.png",// imagen grande
 			"prod_imagen_500":"/assets/img/productos/Velador02/med_500/velador15.png", // imagen mediana
 			"prod_imagen_200":"/assets/img/productos/Velador02/small_200/velador15.png", // imagen chica
-			"prod_link":"velador", // url especifica producto
+			"prod_link":"velador-elegante", // url especifica producto
 			"prod_publicado":"true", // si es publico o privado
 			"prod_material":"madera de pino",
 			"prod_en_existencia":"", // stock del producto
@@ -180,7 +180,7 @@
 			"prod_imagen_1000":"/assets/img/productos/Mesa01/big_1000/m15.png",// imagen grande
 			"prod_imagen_500":"/assets/img/productos/Mesa01/med_500/m15.png", // imagen mediana
 			"prod_imagen_200":"/assets/img/productos/Mesa01/small_200/m15.png", // imagen chica
-			"prod_link":"mesa 02 ", // url especifica producto
+			"prod_link":"mesa-01", // url especifica producto
 			"prod_publicado":"true", // si es publico o privado
 			"prod_material":"madera de pino",
 			"prod_en_existencia":"", // stock del producto
@@ -208,6 +208,8 @@
 			"prod_imagen_1000":"/assets/img/productos/Mesa02/big_1000/m15.png",// imagen grande
 			"prod_imagen_500":"/assets/img/productos/Mesa02/med_500/m15.png", // imagen mediana
 			"prod_imagen_200":"/assets/img/productos/Mesa02/small_200/m15.png", // 		"prod_link":"velador", // url especifica producto
+			"prod_link":"mesa-02", // url especifica producto
+			
 			"prod_publicado":"true", // si es publico o privado
 			"prod_material":"madera de pino",
 			"prod_en_existencia":"", // stock del producto
@@ -235,7 +237,7 @@
 			"prod_imagen_1000":"/assets/img/productos/Silla01/big_1000/silla01_16.png",// imagen grande
 			"prod_imagen_500":"/assets/img/productos/Silla01/med_500/silla01_16.png", // imagen mediana
 			"prod_imagen_200":"/assets/img/productos/Silla01/small_200/silla01_16.png", // imagen chica
-			"prod_link":"velador", // url especifica producto
+			"prod_link":"silla-01", // url especifica producto
 			"prod_publicado":"true", // si es publico o privado
 			"prod_material":"madera de pino",
 			"prod_en_existencia":"", // stock del producto
@@ -263,7 +265,7 @@
 			"prod_imagen_1000":"/assets/img/productos/Silla02/big_1000/silla02_16.png",// imagen grande
 			"prod_imagen_500":"/assets/img/productos/Silla02/med_500/silla02_16.png", // imagen mediana
 			"prod_imagen_200":"/assets/img/productos/Silla02/small_200/silla02_16.png", // imagen chica
-			"prod_link":"#silla02", // url especifica producto
+			"prod_link":"silla-02", // url especifica producto
 			"prod_publicado":"true", // si es publico o privado
 			"prod_material":"madera de pino",
 			"prod_en_existencia":"", // stock del producto
@@ -291,7 +293,7 @@
 			"prod_imagen_1000":"/assets/img/productos/Silla03/big_1000/Silla12.png",// imagen grande
 			"prod_imagen_500":"/assets/img/productos/Silla03/med_500/Silla12.png", // imagen mediana
 			"prod_imagen_200":"/assets/img/productos/Silla03/small_200/Silla12.png", // imagen chica
-			"prod_link":"#silla02", // url especifica producto
+			"prod_link":"silla-03", // url especifica producto
 			"prod_publicado":"true", // si es publico o privado
 			"prod_material":"madera de pino",
 			"prod_en_existencia":"", // stock del producto
@@ -320,7 +322,7 @@
 			"prod_imagen_1000":"/assets/img/productos/Silla04/big_1000/s12.png",// imagen grande
 			"prod_imagen_500":"/assets/img/productos/Silla04/med_500/s12.png", // imagen mediana
 			"prod_imagen_200":"/assets/img/productos/Silla04/smal_200/s12.png", // imagen chica
-			"prod_link":"#silla02", // url especifica producto
+			"prod_link":"silla-04", // url especifica producto
 			"prod_publicado":"true", // si es publico o privado
 			"prod_material":"madera de pino",
 			"prod_en_existencia":"", // stock del producto
@@ -347,8 +349,6 @@
 
 		collapseHeader : function(e) {
 
-
-		
 			var delta = e.originalEvent.deltaY;
 
 				if (delta > 0) {
@@ -431,8 +431,6 @@
 		},
 
 
-
-
 		detectPlatform : function () {
 
 			// console.log("js platform detection : ");
@@ -481,7 +479,7 @@
 					FBZ.model.currentSection = "home";
 
 			} else {
-					FBZ.model.currentSection  = section[section.length-2];
+				FBZ.model.currentSection  = section[section.length-2];
 				FBZ.control.injectSectionScript(FBZ.model.currentSection);
 			}
 
@@ -510,6 +508,37 @@
 
 			FBZ.control.determineSection();
 			FBZ.model.currentSectionIndex = index;
+		},
+
+
+		URLReplaceValue: function (nameSection,nameArticle) {
+
+			// console.log("historyPushValue",nameSection,nameArticle);
+			
+			console.log(FBZ.model.stateObj,"/"+nameSection+"/"+nameArticle); 
+					
+				if (nameArticle == "null" ) {
+					console.log("nameArticle null");
+					history.replaceState(FBZ.control.stateObj,"", "/"+nameSection);
+				}else {
+
+					nameArticle = nameArticle.replace(/ /g,'-');
+
+					// // nasty amend for Sendmeanemail bug
+					// if( nameArticle == "Sendmeanemail" ) {
+
+					// 	nameArticle = "";
+					// }
+					console.log("nameArticle  not null");
+
+					console.log(FBZ.model.stateObj,"/"+nameSection+"/"+nameArticle); 
+					history.replaceState(FBZ.model.stateObj,"", "/"+nameSection+"/"+nameArticle);
+				}
+
+		},
+
+		isObject : function (val) {
+			return (typeof val);
 		},
 
 		animate : function (element,animClass) {

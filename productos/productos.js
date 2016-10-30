@@ -4,23 +4,41 @@
 
 	});// END DOC READY
 
-	FBZ.view.productos = $(".products-container");
-	FBZ.view.productosSidebar = $(".productos-sidebar");
-	FBZ.model.prod_categorias = [];
-	FBZ.view.currentSidebar; 
-	FBZ.model.filterProducts = "none";
-
+	
 
 	FBZ.products = {
 
 		init : function () {
-
+			FBZ.products.getValues();
 			// console.log("init productos");
 			FBZ.products.populate();
 			FBZ.products.activateCategoryAccordeon();
 			// determines if the url includes a # for special section or 
 			FBZ.products.determineProductBehavior();
 
+		},
+		resetResults : function () {
+			FBZ.products.destroy();
+			FBz.products.init();
+		},
+
+		getValues :function ( ) {
+
+			FBZ.view.productos = $(".products-container");
+			FBZ.view.productosSidebar = $(".productos-sidebar");
+			FBZ.model.prod_categorias = [];
+			FBZ.view.currentSidebar = "";
+			FBZ.model.filterProducts = "";
+			FBZ.model.specialCategory = false;
+		},
+
+		destroy: function () {
+			FBZ.view.productos.empty();
+			FBZ.view.productosSidebar.empty();
+		},
+
+		returnProductIndex: function (obj) {
+			console.log("returnProductIndex : ",obj);
 		},
 
 		activateCategoryAccordeon : function () {
@@ -38,39 +56,32 @@
 
 		determineProductBehavior : function (section) {
 
-			console.log("currentArticule :",FBZ.model.currentArticule);
 			if (FBZ.model.currentArticule != "" ) {
+					// console.log("currentArticule :",FBZ.model.currentArticule);
 
-				if (FBZ.model.currentArticule == "#nuevos" ) {
-
-					FBZ.products.displayOnlyNewProducts();
-
-				} else if (FBZ.model.currentArticule == "#ofertas") {
-
-					FBZ.products.displayOnlyOfferProducts();
-
-				}else {
-
+					// console.log(FBZ.model.currentArticule != "#nuevos" || FBZ.model.currentArticule != "#ofertas");
+				if ( FBZ.model.currentArticule != "#nuevos" || FBZ.model.currentArticule != "#ofertas") {
 					FBZ.products.displayProduct();
+					FBZ.model.filterProducts="";
+				}else{
+					FBZ.products.resetResults();
+				}
+			}
+		},
+
+		displayProduct : function () {
+			// console.log("displayProduct")
+			
+			$.each(FBZ.model.products, function(key,value) {
+				
+			 // console.log("#"+value.prod_link, FBZ.model.currentArticule );
+				
+				if( "#"+value.prod_link == FBZ.model.currentArticule ) {
+
+					FBZ.products.createProductBox(FBZ.model.products[key]);
 
 				}
-
-			}
-
-		}, 
-
-		displayOnlyNewProducts : function () {
-			console.log("new");
-			FBZ.model.filterProducts = "new";
-
-		},
-		displayOnlyOfferProducts : function () {
-			console.log("offers");
-			FBZ.model.filterProducts = "offers";
-		},
-		displayProduct : function () {
-			console.log("product");
-
+			});
 		},
 
 		populate : function () {
@@ -118,14 +129,6 @@
 					// console.log("category");
 			}
 
-						// <ul class='panel' >
-						// 	<li class='element-category-product'>product 1</li>
-						// 	<li class='element-category-product'>product 2</li>
-						// 	<li class='element-category-product'>product 3</li>
-						// 	<li class='element-category-product'>product 4</li>
-						// 	<li class='element-category-product'>product 5</li>
-						// </ul>
-
 			// console.log("category", obj.prod_categoria);
 			FBZ.model.prod_categorias.push(obj.prod_categoria);
 		},
@@ -162,7 +165,7 @@
 			//"prod_nuevo":"TRUE", // si el producto esta oferta
 			//"prod_oferta":"TRUE", // si el producto esta oferta
 			//"prod_precio_oferta":"6000" // si el producto esta oferta
-
+			obj.key = key;
 
 			var currentProduct = 
 								"<div class='product' productId='"+obj.prod_id+"' productKey='"+key+"'>"+
@@ -192,15 +195,41 @@
 
 			$currentCategory.append("<li class='element-category-product'><a>"+obj.prod_nombre+"</a></li>");
 		},
+		load360 : function (e) {
+
+			key  = e.currentTarget.attributes.productKey.nodeValue;
+			obj = FBZ.model.products[key];
+
+		},
 
 		createProductBox : function (e) {
-			console.log("createbox",e);
+			
+			// console.log("createbox :");
+			// console.dir(e.key); 
+			var key;
+			var obj; 
 
+			if(e.key != undefined) {
+				// console.log("triggered URL lightbox");
+				obj = e; 
+				key = obj.key;
 
-			var key  = e.currentTarget.attributes.productKey.nodeValue;
+			}else {
 
-			var obj = FBZ.model.products[key];
+				// console.log("triggered CLICK lightbox");
+				key  = e.currentTarget.attributes.productKey.nodeValue;
+				obj = FBZ.model.products[key];
+					if ( FBZ.model.currentArticule == "#nuevos" || FBZ.model.currentArticule == "#ofertas") {
+						FBZ.model.filterProducts = FBZ.model.currentArticule;
+						// console.log("special category");
+
+					}
+				FBZ.control.URLReplaceValue(FBZ.model.currentSection,"#"+obj.prod_link);
+
+			}
 			// console.dir(obj); 
+
+
 
 			FBZ.model.lightbox =  "<div id='lightbox'><a class='close-button-lightbox'><img src='../assets/img/close.svg' alt='close'></a>"
 			+"<div id='lightbox-content'>" //insert clicked link's href into img src
@@ -275,8 +304,14 @@
 		},
 
 			closeLightbox : function () {
+
+				// console.log("close");
+				// console.log(FBZ.model.currentSection,FBZ.model.filterProducts);
 				$('#lightbox').find(".close-button-lightbox").off("click",FBZ.products.closeLightbox);
 				FBZ.control.fadeDivRemove( $('#lightbox'));
+				
+				FBZ.control.URLReplaceValue(FBZ.model.currentSection,FBZ.model.filterProducts);
+
 
 				// $( "div" ).remove( '#lightbox');
 		}
