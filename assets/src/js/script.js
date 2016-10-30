@@ -93,8 +93,8 @@
 			"prod_marca":"rematime",// marca del producto
 			"cant_imagen":"16",
 			"prod_imagen_1000":"/assets/img/productos/Velador01/big_1000/velador15.png",// imagen grande
-			"prod_imagen_500":"/assets/img/productos/Velador01/big_500/velador15.png", // imagen mediana
-			"prod_imagen_200":"/assets/img/productos/Velador01/big_200/velador15.png", // imagen chica
+			"prod_imagen_500":"/assets/img/productos/Velador01/med_500/velador15.png", // imagen mediana
+			"prod_imagen_200":"/assets/img/productos/Velador01/small_200/velador15.png", // imagen chica
 			"prod_link":"velador", // url especifica producto
 			"prod_publicado":"true", // si es publico o privado
 			"prod_material":"madera de pino",
@@ -105,9 +105,9 @@
 			"prod_meta_title":"", // para el search
 			"prod_meta_description":"", // search
 			"prod_meta_keywords":"",  // search 
-			"prod_estado":"TRUE", // habilitado o no 
-			"prod_nuevo":"TRUE", // si el producto esta oferta
-			"prod_oferta":"TRUE", // si el producto esta oferta
+			"prod_estado":"true", // habilitado o no 
+			"prod_nuevo":"false", // si el producto esta oferta
+			"prod_oferta":"false", // si el producto esta oferta
 			"prod_precio_oferta":"6000" // si el producto esta oferta
 
 			}
@@ -117,13 +117,13 @@
 			"prod_id":"002",  // numero de ingreso a la bd
 			"prod_short_name":"Lampara", // nombre corto del producto 
 			"prod_nombre":"Lampara Retro", // nombre largo
-			"prod_codigo":"000001", // codigo de 6 numeros
+			"prod_codigo":"000002", // codigo de 6 numeros
 			"prod_descripcion":"Una de las principales cualidades de este mueble es que posee una estructura clásica, adaptable a cualquier lugar o tipo de ambientación. Su color madera hace que sea fácil de combinar con otros colores. Es un perfecto organizador con el cual ya no tendrás objetos desparramados por tu pieza. Podrás evitar perder tus cosas si sabes que siempre estarán guardadas en el cajón de tu velador. Esta mesa de luz es ideal para colocarla en tu dormitorio al lado de tu cama.", // descripcion del producto
 			"prod_marca":"rematime",// marca del producto
 			"cant_imagen":"1",// imagen grande
 			"prod_imagen_1000":"/assets/img/productos/lampara/big_1000/lampara01.png",// imagen grande
-			"prod_imagen_500":"/assets/img/productos/lampara/big_500/lampara01.png", // imagen mediana
-			"prod_imagen_200":"/assets/img/productos/lampara/big_200/lampara01.png", // imagen chica
+			"prod_imagen_500":"/assets/img/productos/lampara/med_500/lampara01.png", // imagen mediana
+			"prod_imagen_200":"/assets/img/productos/lampara/small_200/lampara01.png", // imagen chica
 			"prod_link":"velador", // url especifica producto
 			"prod_publicado":"true", // si es publico o privado
 			"prod_material":"madera de pino",
@@ -134,9 +134,9 @@
 			"prod_meta_title":"", // para el search
 			"prod_meta_description":"", // search
 			"prod_meta_keywords":"",  // search 
-			"prod_estado":"TRUE", // habilitado o no 
-			"prod_nuevo":"TRUE", // si el producto esta oferta
-			"prod_oferta":"TRUE", // si el producto esta oferta
+			"prod_estado":"true", // habilitado o no 
+			"prod_nuevo":"true", // si el producto esta oferta
+			"prod_oferta":"false", // si el producto esta oferta
 			"prod_precio_oferta":"6000" // si el producto esta oferta
 
 			}
@@ -145,13 +145,13 @@
 			"prod_id":"003",  // numero de ingreso a la bd
 			"prod_short_name":"Velador", // nombre corto del producto 
 			"prod_nombre":"Velador Elegante", // nombre largo
-			"prod_codigo":"000001", // codigo de 6 numeros
+			"prod_codigo":"000003", // codigo de 6 numeros
 			"prod_descripcion":"Una de las principales cualidades de este mueble es que posee una estructura clásica, adaptable a cualquier lugar o tipo de ambientación. Su color madera hace que sea fácil de combinar con otros colores. Es un perfecto organizador con el cual ya no tendrás objetos desparramados por tu pieza. Podrás evitar perder tus cosas si sabes que siempre estarán guardadas en el cajón de tu velador. Esta mesa de luz es ideal para colocarla en tu dormitorio al lado de tu cama.", // descripcion del producto
 			"prod_marca":"rematime",// marca del producto
 			"cant_imagen":"16",// imagen grande
 			"prod_imagen_1000":"/assets/img/productos/Velador02/big_1000/velador15.png",// imagen grande
-			"prod_imagen_500":"/assets/img/productos/Velador02/big_500/velador15.png", // imagen mediana
-			"prod_imagen_200":"/assets/img/productos/Velador02/big_200/velador15.png", // imagen chica
+			"prod_imagen_500":"/assets/img/productos/Velador02/med_500/velador15.png", // imagen mediana
+			"prod_imagen_200":"/assets/img/productos/Velador02/small_200/velador15.png", // imagen chica
 			"prod_link":"velador", // url especifica producto
 			"prod_publicado":"true", // si es publico o privado
 			"prod_material":"madera de pino",
@@ -162,9 +162,9 @@
 			"prod_meta_title":"", // para el search
 			"prod_meta_description":"", // search
 			"prod_meta_keywords":"",  // search 
-			"prod_estado":"TRUE", // habilitado o no 
-			"prod_nuevo":"TRUE", // si el producto esta oferta
-			"prod_oferta":"TRUE", // si el producto esta oferta
+			"prod_estado":"true", // habilitado o no 
+			"prod_nuevo":"false", // si el producto esta oferta
+			"prod_oferta":"true", // si el producto esta oferta
 			"prod_precio_oferta":"6000" // si el producto esta oferta
 			}
 
@@ -178,8 +178,8 @@
 			"prod_marca":"rematime",// marca del producto
 			"cant_imagen":"16",// imagen grande
 			"prod_imagen_1000":"/assets/img/productos/Mesa01/big_1000/m15.png",// imagen grande
-			"prod_imagen_500":"/assets/img/productos/Mesa01/big_500/m15.png", // imagen mediana
-			"prod_imagen_200":"/assets/img/productos/Mesa01/big_200/m15.png", // imagen chica
+			"prod_imagen_500":"/assets/img/productos/Mesa01/med_500/m15.png", // imagen mediana
+			"prod_imagen_200":"/assets/img/productos/Mesa01/small_200/m15.png", // imagen chica
 			"prod_link":"mesa 02 ", // url especifica producto
 			"prod_publicado":"true", // si es publico o privado
 			"prod_material":"madera de pino",
@@ -190,9 +190,9 @@
 			"prod_meta_title":"", // para el search
 			"prod_meta_description":"", // search
 			"prod_meta_keywords":"",  // search 
-			"prod_estado":"TRUE", // habilitado o no 
-			"prod_nuevo":"TRUE", // si el producto esta oferta
-			"prod_oferta":"TRUE", // si el producto esta oferta
+			"prod_estado":"true", // habilitado o no 
+			"prod_nuevo":"true", // si el producto esta oferta
+			"prod_oferta":"true", // si el producto esta oferta
 			"prod_precio_oferta":"6000" // si el producto esta oferta
 
 			}
@@ -206,8 +206,8 @@
 			"prod_marca":"rematime",// marca del producto
 			"cant_imagen":"16",// imagen grande
 			"prod_imagen_1000":"/assets/img/productos/Mesa02/big_1000/m15.png",// imagen grande
-			"prod_imagen_500":"/assets/img/productos/Mesa02/big_500/m15.png", // imagen mediana
-			"prod_imagen_200":"/assets/img/productos/Mesa02/big_200/m15.png", // 		"prod_link":"velador", // url especifica producto
+			"prod_imagen_500":"/assets/img/productos/Mesa02/med_500/m15.png", // imagen mediana
+			"prod_imagen_200":"/assets/img/productos/Mesa02/small_200/m15.png", // 		"prod_link":"velador", // url especifica producto
 			"prod_publicado":"true", // si es publico o privado
 			"prod_material":"madera de pino",
 			"prod_en_existencia":"", // stock del producto
@@ -217,9 +217,9 @@
 			"prod_meta_title":"", // para el search
 			"prod_meta_description":"", // search
 			"prod_meta_keywords":"",  // search 
-			"prod_estado":"TRUE", // habilitado o no 
-			"prod_nuevo":"TRUE", // si el producto esta oferta
-			"prod_oferta":"TRUE", // si el producto esta oferta
+			"prod_estado":"true", // habilitado o no 
+			"prod_nuevo":"true", // si el producto esta oferta
+			"prod_oferta":"true", // si el producto esta oferta
 			"prod_precio_oferta":"6000" // si el producto esta oferta
 
 			}
@@ -233,8 +233,8 @@
 			"prod_marca":"rematime",// marca del producto
 			"cant_imagen":"16",// imagen grande
 			"prod_imagen_1000":"/assets/img/productos/Silla01/big_1000/silla01_16.png",// imagen grande
-			"prod_imagen_500":"/assets/img/productos/Silla01/big_500/silla01_16.png", // imagen mediana
-			"prod_imagen_200":"/assets/img/productos/Silla01/big_200/silla01_16.png", // imagen chica
+			"prod_imagen_500":"/assets/img/productos/Silla01/med_500/silla01_16.png", // imagen mediana
+			"prod_imagen_200":"/assets/img/productos/Silla01/small_200/silla01_16.png", // imagen chica
 			"prod_link":"velador", // url especifica producto
 			"prod_publicado":"true", // si es publico o privado
 			"prod_material":"madera de pino",
@@ -245,9 +245,9 @@
 			"prod_meta_title":"", // para el search
 			"prod_meta_description":"", // search
 			"prod_meta_keywords":"",  // search 
-			"prod_estado":"TRUE", // habilitado o no 
-			"prod_nuevo":"TRUE", // si el producto esta oferta
-			"prod_oferta":"TRUE", // si el producto esta oferta
+			"prod_estado":"true", // habilitado o no 
+			"prod_nuevo":"true", // si el producto esta oferta
+			"prod_oferta":"true", // si el producto esta oferta
 			"prod_precio_oferta":"6000" // si el producto esta oferta
 
 			}
@@ -263,7 +263,7 @@
 			"prod_imagen_1000":"/assets/img/productos/Silla02/big_1000/silla02_16.png",// imagen grande
 			"prod_imagen_500":"/assets/img/productos/Silla02/med_500/silla02_16.png", // imagen mediana
 			"prod_imagen_200":"/assets/img/productos/Silla02/small_200/silla02_16.png", // imagen chica
-			"prod_link":"silla02", // url especifica producto
+			"prod_link":"#silla02", // url especifica producto
 			"prod_publicado":"true", // si es publico o privado
 			"prod_material":"madera de pino",
 			"prod_en_existencia":"", // stock del producto
@@ -273,9 +273,9 @@
 			"prod_meta_title":"", // para el search
 			"prod_meta_description":"", // search
 			"prod_meta_keywords":"",  // search 
-			"prod_estado":"TRUE", // habilitado o no 
-			"prod_nuevo":"TRUE", // si el producto esta oferta
-			"prod_oferta":"TRUE", // si el producto esta oferta
+			"prod_estado":"true", // habilitado o no 
+			"prod_nuevo":"true", // si el producto esta oferta
+			"prod_oferta":"true", // si el producto esta oferta
 			"prod_precio_oferta":"6000" // si el producto esta oferta
 
 			}
@@ -291,7 +291,7 @@
 			"prod_imagen_1000":"/assets/img/productos/Silla03/big_1000/Silla12.png",// imagen grande
 			"prod_imagen_500":"/assets/img/productos/Silla03/med_500/Silla12.png", // imagen mediana
 			"prod_imagen_200":"/assets/img/productos/Silla03/small_200/Silla12.png", // imagen chica
-			"prod_link":"silla02", // url especifica producto
+			"prod_link":"#silla02", // url especifica producto
 			"prod_publicado":"true", // si es publico o privado
 			"prod_material":"madera de pino",
 			"prod_en_existencia":"", // stock del producto
@@ -301,9 +301,9 @@
 			"prod_meta_title":"", // para el search
 			"prod_meta_description":"", // search
 			"prod_meta_keywords":"",  // search 
-			"prod_estado":"TRUE", // habilitado o no 
-			"prod_nuevo":"TRUE", // si el producto esta oferta
-			"prod_oferta":"TRUE", // si el producto esta oferta
+			"prod_estado":"true", // habilitado o no 
+			"prod_nuevo":"true", // si el producto esta oferta
+			"prod_oferta":"true", // si el producto esta oferta
 			"prod_precio_oferta":"6000" // si el producto esta oferta
 
 			}
@@ -318,9 +318,9 @@
 			"prod_marca":"rematime",// marca del producto
 			"cant_imagen":"16",// imagen grande
 			"prod_imagen_1000":"/assets/img/productos/Silla04/big_1000/s12.png",// imagen grande
-			"prod_imagen_500":"/assets/img/productos/Silla04/big_500/s12.png", // imagen mediana
-			"prod_imagen_200":"/assets/img/productos/Silla04/big_200/s12.png", // imagen chica
-			"prod_link":"silla02", // url especifica producto
+			"prod_imagen_500":"/assets/img/productos/Silla04/med_500/s12.png", // imagen mediana
+			"prod_imagen_200":"/assets/img/productos/Silla04/smal_200/s12.png", // imagen chica
+			"prod_link":"#silla02", // url especifica producto
 			"prod_publicado":"true", // si es publico o privado
 			"prod_material":"madera de pino",
 			"prod_en_existencia":"", // stock del producto
@@ -330,9 +330,9 @@
 			"prod_meta_title":"", // para el search
 			"prod_meta_description":"", // search
 			"prod_meta_keywords":"",  // search 
-			"prod_estado":"TRUE", // habilitado o no 
-			"prod_nuevo":"TRUE", // si el producto esta oferta
-			"prod_oferta":"TRUE", // si el producto esta oferta
+			"prod_estado":"true", // habilitado o no 
+			"prod_nuevo":"true", // si el producto esta oferta
+			"prod_oferta":"true", // si el producto esta oferta
 			"prod_precio_oferta":"6000" // si el producto esta oferta
 
 			}
@@ -486,16 +486,25 @@
 			}
 
 			FBZ.model.currentArticule  = section[section.length-1];
-			//console.log(FBZ.model.currentSection);
-		}, 
+			// console.log(FBZ.model.currentSection);
+
+			// if(FBZ.model.currentSection == "productos"){
+
+			// 	FBZ.control.determineProductBehavior(section); 
+			// }
+		},
+
+		// determineProductBehavior : function (section) {
+		// 	console.dir(section);
+		// 	console.log("currentArticule :",FBZ.model.currentArticule);
+		// 	FBZ.model("lala");
+		// }, 
 
 		injectSectionScript : function (jsname){
 
 				console.log("js :",jsname);
 				$.getScript(jsname+".js");
 		},
-
-
 
 		sectionMonitor : function (index) { 
 

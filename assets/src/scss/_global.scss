@@ -184,11 +184,54 @@ section {
 
 }
 
+.product-new-tag {
+	background-color:$color-secondary;
+	color:white;
+	position:absolute;
+	position: absolute;
+	padding: 0 5%;
+	transform-origin: 50%;
+	top: 3%;
+	left: 0;
+	font-family: 'Montserrat-Light';
+	text-transform:uppercase;
+	font-size:0.7em;
+	vertical-align: middle; 
+}
+
+.product-offer-tag {
+
+	top:55%;
+	left:65%;
+	color:white;
+	position: absolute;
+	// border-radius:50%;
+	font-family: 'Montserrat-Light';
+	text-transform:uppercase;
+	font-size:0.7em;
+	vertical-align: middle; 
+	height: 60px;
+  width: 60px;
+  display: table-cell;
+  text-align: center;
+  vertical-align: middle;
+  border-radius: 50%; /* may require vendor prefixes */
+	background-color:$color-darksidegray;
+
+}
+
+// .product-offer-tag:after {
+// 	content:"";
+// 	border-radius:50%;
+// }
+
+.line-through {
+	text-decoration:line-through;
+}
 .sidebar-category-product {
 
 
-margin:0!important;
-	margin-bottom: 0!important;
+	margin:0!important;
 	// height:100%;
 	float:left;
 	// width:30vw;
@@ -217,7 +260,7 @@ margin:0!important;
 .sidebar-category-product:after {
     content: '\02795'; /* Unicode character for "plus" sign (+) */
     font-size: 13px;
-    color: white!important;
+    color: #FFF;
     float: right;
     margin-left: 20px;
 }
@@ -304,10 +347,17 @@ margin:0!important;
 	margin:0;
 }
 
+.product-offer-text-wrapper {
+	font-family:"Montserrat-Light";
+	transform: translateY(-40%);
+	top: 50%;
+	position: absolute;
+	width:100%;
+}
+
 
 .offer-products-text {
 	text-align:center;
-	font-family:"Montserrat-Light";
 	background-color:white;
 	width:60%;
 	height:60%;
@@ -316,6 +366,18 @@ margin:0!important;
 	position:absolute;
 	display:inline-block;
 	padding-top: 14%;
+}
+
+
+.product-offer-price {
+	font-size:1em;
+}
+
+.product-offer-text {
+	font-family:"Montserrat-Light";
+	font-size:0.6em;
+	width:100%;
+	text-align:center;
 }
 
 bold {
@@ -495,6 +557,7 @@ bold {
 	display:inline-block;
 	text-align: center;
 	cursor: pointer;
+	overflow: hidden;
 
 	.item-name {
 		font-size: .7em;
@@ -898,6 +961,8 @@ li {
 
 
 .masthead {
+
+	z-index: 100;
 
 	&.active {
 		background-color:white;
