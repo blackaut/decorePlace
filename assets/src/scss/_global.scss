@@ -170,8 +170,11 @@ section {
 	width:100%;
 	float:left;
 }
-
-
+.product-container {
+	max-width: 68vw;
+    display: inline-block;
+    float: left;
+}
 .productos-sidebar {
 	height:100vh;
 	float:left;
@@ -196,7 +199,8 @@ section {
 	font-family: 'Montserrat-Light';
 	text-transform:uppercase;
 	font-size:0.7em;
-	vertical-align: middle; 
+	vertical-align: middle;
+	    z-index: 20;
 }
 
 .product-offer-tag {
@@ -215,6 +219,7 @@ section {
   display: table-cell;
   text-align: center;
   vertical-align: middle;
+      z-index: 20;
   border-radius: 50%; /* may require vendor prefixes */
 	background-color:$color-darksidegray;
 

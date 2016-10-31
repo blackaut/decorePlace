@@ -356,16 +356,17 @@
 			obj.displayedImageWidth = obj.displayedImage.width();
 			obj.displayedImageName = obj.displayedImage.attr("srcset");
 
-			
-			console.log(obj.displayedImage.attr("srcset"), obj.displayedImageWidth);
+			// console.log(obj.displayedImage.attr("srcset"), obj.displayedImageWidth);
 
 			FBZ.control.create360Array(obj);
 			// console.dir(obj);
 
-			obj.displayedImage.threesixty({images:obj.imagesToSpin, method:'auto',autoscrollspeed:'200' ,direction:'forward', sensibility: 1}); 
+			var options = obj.displayedImage.threesixty({images:obj.imagesToSpin, method:'auto',autoscrollspeed:'200' ,direction:'forward', sensibility: 1}); 
 			// obj.displayedImage.hide();
+			console.log(options.intervals);
 
 		},
+
 		create360Array : function (obj) {
 
 			var currentImage  = obj.displayedImageName;
@@ -373,7 +374,6 @@
 			var imageURL = currentImage.substring(0, currentImage.length - 6);
 			var extraZero = 0;
 			obj.imagesToSpin = [];
-
 			for (var i = 1 ; obj.cant_imagen >= i ; i ++) {
  			
  				if(i > 9) { extraZero=""};
@@ -384,6 +384,15 @@
 
 			// return obj.imagesToSpin; 
 		},
+
+		stop360Spin : function (e) {
+
+			if(e){
+				 window.clearInterval(e);
+				e = null;
+			}
+		},
+
 
 		headerTransform : function () {
 			$(window).on('wheel', FBZ.control.collapseHeader );

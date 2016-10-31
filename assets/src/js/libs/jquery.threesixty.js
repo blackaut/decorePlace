@@ -18,6 +18,7 @@ jQuery.fn.threesixty = function(options){
 	options.direction = options.direction || "forward";
 	options.sensibility = options.sensibility || options.cycle * 0.35;
 	options.autoscrollspeed = options.autoscrollspeed || 500;
+	options.intervals = [];
 
 
 	if (options.direction == "backward")
@@ -34,15 +35,15 @@ jQuery.fn.threesixty = function(options){
 		pic.wrap(parent).css({position:"relative",top:0,left:0});
 		parent = pic.parent();
 		//Binding the progress bar
-		var progressBg = $("<div></div>").css({width:parent.width()-200, height:10, backgroundColor:"black", position:"absolute","bottom":60,left:100 }).addClass("progressBg");
+		var progressBg = $("<div></div>").css({width:parent.width()-200, height:10, backgroundColor:"white", position:"absolute","bottom":60,left:100 }).addClass("progressBg");
 		var progressBar = $("<div></div>").css({width:0, height:10, backgroundColor:"white", position:"absolute","bottom":60,left:100 }).data("progress",0).addClass("progressBar");
 		var overlay;
 		try {
-		 overlay = $("<div></div>").css({cursor:"wait", width:pic.width(), background:"RGBA(0,0,0,0.7)", height:pic.height(),  position:"absolute","top":0,left:0 }).addClass("overlay");
+		 overlay = $("<div></div>").css({cursor:"wait", width:pic.width(), height:pic.height(),  position:"absolute","top":0,left:0 }).addClass("overlay");
 		}
 		catch (e)
 		{
-		 overlay = $("<div></div>").css({cursor:"wait", width:pic.width(), height:pic.height(), backgroundColor:"black", filter:"alpha(opacity=70)",  position:"absolute","top":0,left:0 }).addClass("overlay");		
+		 overlay = $("<div></div>").css({cursor:"wait", width:pic.width(), height:pic.height(), filter:"alpha(opacity=70)",  position:"absolute","top":0,left:0 }).addClass("overlay");		
 		}
 
 		//Nasty overlay capturing all the events :P
@@ -50,7 +51,7 @@ jQuery.fn.threesixty = function(options){
 		overlay.mousedown(function(e) { e.preventDefault(); e.stopPropagation(); });
 
 		parent.append(overlay).append(progressBg).append(progressBar);
-		pic.css({cursor:"all-scroll"});
+		// pic.css({cursor:"all-scroll"});
 		
 
 		var totalProgress = 0;
@@ -166,8 +167,12 @@ jQuery.fn.threesixty = function(options){
 		if (options.method == "auto") {
 			var speed = options.autoscrollspeed;
 			var newIndex=0;
-			window.setInterval(function() { pic.attr("srcset", imgArr[++newIndex % imgArr.length])} , speed);
+			var autoInterval = window.setInterval(function() { pic.attr("srcset", imgArr[++newIndex % imgArr.length])} , speed);
+			options.intervals.push(autoInterval);
 		}
-	});			
+			
+
+	});
+	return options.intervals;
 };
 
