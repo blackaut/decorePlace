@@ -4,8 +4,6 @@
 
 	});// END DOC READY
 
-	
-
 	FBZ.products = {
 
 		init : function () {
@@ -37,9 +35,7 @@
 			FBZ.view.productosSidebar.empty();
 		},
 
-		returnProductIndex: function (obj) {
-			console.log("returnProductIndex : ",obj);
-		},
+
 
 		activateCategoryAccordeon : function () {
 			/* Toggle between adding and removing the "active" and "show" classes when the user clicks on one of the "Section" buttons. The "active" class is used to add a background color to the current button when its belonging panel is open. The "show" class is used to open the specific accordion panel */
@@ -113,6 +109,7 @@
 
 				FBZ.view.product = $(".product");
 				FBZ.view.product.on("click",FBZ.products.createProductBox);
+				FBZ.view.product.on("mouseover",FBZ.control.load360);
 
 		},
 
@@ -191,16 +188,9 @@
 			
 			var $currentCategory = $("."+ obj.prod_categoria);
 			// console.log($currentCategory,"<li class='element-category-product'><a>"+obj.prod_nombre+"</a></li>");
-		
-
 			$currentCategory.append("<li class='element-category-product'><a>"+obj.prod_nombre+"</a></li>");
 		},
-		load360 : function (e) {
 
-			key  = e.currentTarget.attributes.productKey.nodeValue;
-			obj = FBZ.model.products[key];
-
-		},
 
 		createProductBox : function (e) {
 			

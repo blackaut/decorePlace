@@ -149,9 +149,9 @@
 			"prod_descripcion":"Una de las principales cualidades de este mueble es que posee una estructura clásica, adaptable a cualquier lugar o tipo de ambientación. Su color madera hace que sea fácil de combinar con otros colores. Es un perfecto organizador con el cual ya no tendrás objetos desparramados por tu pieza. Podrás evitar perder tus cosas si sabes que siempre estarán guardadas en el cajón de tu velador. Esta mesa de luz es ideal para colocarla en tu dormitorio al lado de tu cama.", // descripcion del producto
 			"prod_marca":"rematime",// marca del producto
 			"cant_imagen":"16",// imagen grande
-			"prod_imagen_1000":"/assets/img/productos/Velador02/big_1000/velador15.png",// imagen grande
-			"prod_imagen_500":"/assets/img/productos/Velador02/med_500/velador15.png", // imagen mediana
-			"prod_imagen_200":"/assets/img/productos/Velador02/small_200/velador15.png", // imagen chica
+			"prod_imagen_1000":"/assets/img/productos/Velador02/big_1000/velador01.png",// imagen grande
+			"prod_imagen_500":"/assets/img/productos/Velador02/med_500/velador01.png", // imagen mediana
+			"prod_imagen_200":"/assets/img/productos/Velador02/small_200/velador01.png", // imagen chica
 			"prod_link":"velador-elegante", // url especifica producto
 			"prod_publicado":"true", // si es publico o privado
 			"prod_material":"madera de pino",
@@ -177,9 +177,9 @@
 			"prod_descripcion":"Una de las principales cualidades de este mueble es que posee una estructura clásica, adaptable a cualquier lugar o tipo de ambientación. Su color madera hace que sea fácil de combinar con otros colores. Es un perfecto organizador con el cual ya no tendrás objetos desparramados por tu pieza. Podrás evitar perder tus cosas si sabes que siempre estarán guardadas en el cajón de tu velador. Esta mesa de luz es ideal para colocarla en tu dormitorio al lado de tu cama.", // descripcion del producto
 			"prod_marca":"rematime",// marca del producto
 			"cant_imagen":"16",// imagen grande
-			"prod_imagen_1000":"/assets/img/productos/Mesa01/big_1000/m15.png",// imagen grande
-			"prod_imagen_500":"/assets/img/productos/Mesa01/med_500/m15.png", // imagen mediana
-			"prod_imagen_200":"/assets/img/productos/Mesa01/small_200/m15.png", // imagen chica
+			"prod_imagen_1000":"/assets/img/productos/Mesa01/big_1000/m01.png",// imagen grande
+			"prod_imagen_500":"/assets/img/productos/Mesa01/med_500/m01.png", // imagen mediana
+			"prod_imagen_200":"/assets/img/productos/Mesa01/small_200/m01.png", // imagen chica
 			"prod_link":"mesa-01", // url especifica producto
 			"prod_publicado":"true", // si es publico o privado
 			"prod_material":"madera de pino",
@@ -205,11 +205,11 @@
 			"prod_descripcion":"Una de las principales cualidades de este mueble es que posee una estructura clásica, adaptable a cualquier lugar o tipo de ambientación. Su color madera hace que sea fácil de combinar con otros colores. Es un perfecto organizador con el cual ya no tendrás objetos desparramados por tu pieza. Podrás evitar perder tus cosas si sabes que siempre estarán guardadas en el cajón de tu velador. Esta mesa de luz es ideal para colocarla en tu dormitorio al lado de tu cama.", // descripcion del producto
 			"prod_marca":"rematime",// marca del producto
 			"cant_imagen":"16",// imagen grande
-			"prod_imagen_1000":"/assets/img/productos/Mesa02/big_1000/m15.png",// imagen grande
-			"prod_imagen_500":"/assets/img/productos/Mesa02/med_500/m15.png", // imagen mediana
-			"prod_imagen_200":"/assets/img/productos/Mesa02/small_200/m15.png", // 		"prod_link":"velador", // url especifica producto
+			"prod_imagen_1000":"/assets/img/productos/Mesa02/big_1000/m01.png",// imagen grande
+			"prod_imagen_500":"/assets/img/productos/Mesa02/med_500/m01.png", // imagen mediana
+			"prod_imagen_200":"/assets/img/productos/Mesa02/small_200/m01.png", // 		"prod_link":"velador", // url especifica producto
 			"prod_link":"mesa-02", // url especifica producto
-			
+
 			"prod_publicado":"true", // si es publico o privado
 			"prod_material":"madera de pino",
 			"prod_en_existencia":"", // stock del producto
@@ -234,9 +234,9 @@
 			"prod_descripcion":"Una de las principales cualidades de este mueble es que posee una estructura clásica, adaptable a cualquier lugar o tipo de ambientación. Su color madera hace que sea fácil de combinar con otros colores. Es un perfecto organizador con el cual ya no tendrás objetos desparramados por tu pieza. Podrás evitar perder tus cosas si sabes que siempre estarán guardadas en el cajón de tu velador. Esta mesa de luz es ideal para colocarla en tu dormitorio al lado de tu cama.", // descripcion del producto
 			"prod_marca":"rematime",// marca del producto
 			"cant_imagen":"16",// imagen grande
-			"prod_imagen_1000":"/assets/img/productos/Silla01/big_1000/silla01_16.png",// imagen grande
-			"prod_imagen_500":"/assets/img/productos/Silla01/med_500/silla01_16.png", // imagen mediana
-			"prod_imagen_200":"/assets/img/productos/Silla01/small_200/silla01_16.png", // imagen chica
+			"prod_imagen_1000":"/assets/img/productos/Silla01/big_1000/silla01_01.png",// imagen grande
+			"prod_imagen_500":"/assets/img/productos/Silla01/med_500/silla01_01.png", // imagen mediana
+			"prod_imagen_200":"/assets/img/productos/Silla01/small_200/silla01_01.png", // imagen chica
 			"prod_link":"silla-01", // url especifica producto
 			"prod_publicado":"true", // si es publico o privado
 			"prod_material":"madera de pino",
@@ -262,9 +262,9 @@
 			"prod_descripcion":"Una de las principales cualidades de este mueble es que posee una estructura clásica, adaptable a cualquier lugar o tipo de ambientación. Su color madera hace que sea fácil de combinar con otros colores. Es un perfecto organizador con el cual ya no tendrás objetos desparramados por tu pieza. Podrás evitar perder tus cosas si sabes que siempre estarán guardadas en el cajón de tu velador. Esta mesa de luz es ideal para colocarla en tu dormitorio al lado de tu cama.", // descripcion del producto
 			"prod_marca":"rematime",// marca del producto
 			"cant_imagen":"16",// imagen grande
-			"prod_imagen_1000":"/assets/img/productos/Silla02/big_1000/silla02_16.png",// imagen grande
-			"prod_imagen_500":"/assets/img/productos/Silla02/med_500/silla02_16.png", // imagen mediana
-			"prod_imagen_200":"/assets/img/productos/Silla02/small_200/silla02_16.png", // imagen chica
+			"prod_imagen_1000":"/assets/img/productos/Silla02/big_1000/silla02_01.png",// imagen grande
+			"prod_imagen_500":"/assets/img/productos/Silla02/med_500/silla02_01.png", // imagen mediana
+			"prod_imagen_200":"/assets/img/productos/Silla02/small_200/silla02_01.png", // imagen chica
 			"prod_link":"silla-02", // url especifica producto
 			"prod_publicado":"true", // si es publico o privado
 			"prod_material":"madera de pino",
@@ -290,9 +290,9 @@
 			"prod_descripcion":"Una de las principales cualidades de este mueble es que posee una estructura clásica, adaptable a cualquier lugar o tipo de ambientación. Su color madera hace que sea fácil de combinar con otros colores. Es un perfecto organizador con el cual ya no tendrás objetos desparramados por tu pieza. Podrás evitar perder tus cosas si sabes que siempre estarán guardadas en el cajón de tu velador. Esta mesa de luz es ideal para colocarla en tu dormitorio al lado de tu cama.", // descripcion del producto
 			"prod_marca":"rematime",// marca del producto
 			"cant_imagen":"16",// imagen grande
-			"prod_imagen_1000":"/assets/img/productos/Silla03/big_1000/Silla12.png",// imagen grande
-			"prod_imagen_500":"/assets/img/productos/Silla03/med_500/Silla12.png", // imagen mediana
-			"prod_imagen_200":"/assets/img/productos/Silla03/small_200/Silla12.png", // imagen chica
+			"prod_imagen_1000":"/assets/img/productos/Silla03/big_1000/Silla01.png",// imagen grande
+			"prod_imagen_500":"/assets/img/productos/Silla03/med_500/Silla01.png", // imagen mediana
+			"prod_imagen_200":"/assets/img/productos/Silla03/small_200/Silla01.png", // imagen chica
 			"prod_link":"silla-03", // url especifica producto
 			"prod_publicado":"true", // si es publico o privado
 			"prod_material":"madera de pino",
@@ -319,9 +319,9 @@
 			"prod_descripcion":"Una de las principales cualidades de este mueble es que posee una estructura clásica, adaptable a cualquier lugar o tipo de ambientación. Su color madera hace que sea fácil de combinar con otros colores. Es un perfecto organizador con el cual ya no tendrás objetos desparramados por tu pieza. Podrás evitar perder tus cosas si sabes que siempre estarán guardadas en el cajón de tu velador. Esta mesa de luz es ideal para colocarla en tu dormitorio al lado de tu cama.", // descripcion del producto
 			"prod_marca":"rematime",// marca del producto
 			"cant_imagen":"16",// imagen grande
-			"prod_imagen_1000":"/assets/img/productos/Silla04/big_1000/s12.png",// imagen grande
-			"prod_imagen_500":"/assets/img/productos/Silla04/med_500/s12.png", // imagen mediana
-			"prod_imagen_200":"/assets/img/productos/Silla04/smal_200/s12.png", // imagen chica
+			"prod_imagen_1000":"/assets/img/productos/Silla04/big_1000/s01.png",// imagen grande
+			"prod_imagen_500":"/assets/img/productos/Silla04/med_500/s01.png", // imagen mediana
+			"prod_imagen_200":"/assets/img/productos/Silla04/smal_200/s01.png", // imagen chica
 			"prod_link":"silla-04", // url especifica producto
 			"prod_publicado":"true", // si es publico o privado
 			"prod_material":"madera de pino",
@@ -342,6 +342,48 @@
 
 		},
 
+		returnProductIndex: function (obj) {
+			console.log("returnProductIndex : ",obj);
+		},
+
+		load360 : function (e) {
+
+			 $(e.currentTarget).off("mouseover",FBZ.control.load360);
+
+			var key  = e.currentTarget.attributes.productKey.nodeValue;
+			var obj = FBZ.model.products[key];
+			obj.displayedImage = $( e.currentTarget ).find("picture").find("img");
+			obj.displayedImageWidth = obj.displayedImage.width();
+			obj.displayedImageName = obj.displayedImage.attr("srcset");
+
+			
+			console.log(obj.displayedImage.attr("srcset"), obj.displayedImageWidth);
+
+			FBZ.control.create360Array(obj);
+			// console.dir(obj);
+
+			obj.displayedImage.threesixty({images:obj.imagesToSpin, method:'auto',autoscrollspeed:'200' ,direction:'forward', sensibility: 1}); 
+			// obj.displayedImage.hide();
+
+		},
+		create360Array : function (obj) {
+
+			var currentImage  = obj.displayedImageName;
+			var imageURLLastBit = currentImage.substr(-4);
+			var imageURL = currentImage.substring(0, currentImage.length - 6);
+			var extraZero = 0;
+			obj.imagesToSpin = [];
+
+			for (var i = 1 ; obj.cant_imagen >= i ; i ++) {
+ 			
+ 				if(i > 9) { extraZero=""};
+				obj.imagesToSpin.push(imageURL+extraZero+i+imageURLLastBit)
+				// console.log(imageURL+extraZero+i+imageURLLastBit);
+			}
+			// console.log(obj.imagesToSpin);
+
+			// return obj.imagesToSpin; 
+		},
 
 		headerTransform : function () {
 			$(window).on('wheel', FBZ.control.collapseHeader );
@@ -500,7 +542,7 @@
 
 		injectSectionScript : function (jsname){
 
-				console.log("js :",jsname);
+				// console.log("js :",jsname);
 				$.getScript(jsname+".js");
 		},
 
@@ -515,10 +557,10 @@
 
 			// console.log("historyPushValue",nameSection,nameArticle);
 			
-			console.log(FBZ.model.stateObj,"/"+nameSection+"/"+nameArticle); 
+			// console.log(FBZ.model.stateObj,"/"+nameSection+"/"+nameArticle); 
 					
 				if (nameArticle == "null" ) {
-					console.log("nameArticle null");
+					// console.log("nameArticle null");
 					history.replaceState(FBZ.control.stateObj,"", "/"+nameSection);
 				}else {
 
@@ -529,9 +571,9 @@
 
 					// 	nameArticle = "";
 					// }
-					console.log("nameArticle  not null");
+					// console.log("nameArticle  not null");
 
-					console.log(FBZ.model.stateObj,"/"+nameSection+"/"+nameArticle); 
+					// console.log(FBZ.model.stateObj,"/"+nameSection+"/"+nameArticle); 
 					history.replaceState(FBZ.model.stateObj,"", "/"+nameSection+"/"+nameArticle);
 				}
 
