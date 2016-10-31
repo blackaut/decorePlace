@@ -350,6 +350,10 @@
 
 			 $(e.currentTarget).off("mouseover",FBZ.control.load360);
 
+			 $(e.currentTarget).on("mouseout",FBZ.control.pause360);
+			 $(e.currentTarget).on("mouseover",FBZ.control.play360);
+
+
 			var key  = e.currentTarget.attributes.productKey.nodeValue;
 			var obj = FBZ.model.products[key];
 			obj.displayedImage = $( e.currentTarget ).find("picture").find("img");
@@ -358,17 +362,37 @@
 
 			// console.log(obj.displayedImage.attr("srcset"), obj.displayedImageWidth);
 
+			// create an array of all the images available
 			FBZ.control.create360Array(obj);
 			// console.dir(obj);
 
-			var options = obj.displayedImage.threesixty({images:obj.imagesToSpin, method:'auto',autoscrollspeed:'200' ,direction:'forward', sensibility: 1}); 
-			// obj.displayedImage.hide();
-			console.log(options.intervals);
+			var options = obj.displayedImage.threesixty({images:obj.imagesToSpin, method:'auto',autoscrollspeed:'200' ,direction:'forward', object: obj,sensibility: 1}); 
+			// console.dir(obj.autoInterval);
+			obj.pause = false;
 
+		},
+		pause360 : function(e) {
+
+			// console.dir(e);
+			FBZ.control.getDataObjFromCurrentTarget(e.currentTarget).pause = true;
+			// window.clearInterval(interval);
+		},
+		play360 : function(e) {
+
+			// console.dir(e);
+			FBZ.control.getDataObjFromCurrentTarget(e.currentTarget).pause = false;
+			// window.clearInterval(interval);
+		},
+
+		getDataObjFromCurrentTarget: function (event) {
+			var key  = event.attributes.productKey.nodeValue;
+			var obj = FBZ.model.products[key];
+			return obj;
 		},
 
 		create360Array : function (obj) {
 
+			// grab the image url and replace the numbers then, iterate and put them in an array.
 			var currentImage  = obj.displayedImageName;
 			var imageURLLastBit = currentImage.substr(-4);
 			var imageURL = currentImage.substring(0, currentImage.length - 6);
@@ -378,20 +402,17 @@
  			
  				if(i > 9) { extraZero=""};
 				obj.imagesToSpin.push(imageURL+extraZero+i+imageURLLastBit)
-				// console.log(imageURL+extraZero+i+imageURLLastBit);
 			}
-			// console.log(obj.imagesToSpin);
 
-			// return obj.imagesToSpin; 
 		},
 
-		stop360Spin : function (e) {
+		// stop360Spin : function (e) {
 
-			if(e){
-				 window.clearInterval(e);
-				e = null;
-			}
-		},
+		// 	if(e){
+		// 		 window.clearInterval(e);
+		// 		e = null;
+		// 	}
+		// },
 
 
 		headerTransform : function () {

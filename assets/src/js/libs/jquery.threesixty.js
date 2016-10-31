@@ -18,7 +18,7 @@ jQuery.fn.threesixty = function(options){
 	options.direction = options.direction || "forward";
 	options.sensibility = options.sensibility || options.cycle * 0.35;
 	options.autoscrollspeed = options.autoscrollspeed || 500;
-	options.intervals = [];
+	options.currentObject = options.object;
 
 
 	if (options.direction == "backward")
@@ -31,7 +31,7 @@ jQuery.fn.threesixty = function(options){
 	$(function() {
 		var cache = [];
 		var parent = $("<div>");
-		parent.css({height:pic.height(), width:pic.width(), overflow:"hidden", position:"relative"});
+		parent.css({height:pic.height(), width:pic.width(),overflow:"hidden",display:"inline", position:"relative"});
 		pic.wrap(parent).css({position:"relative",top:0,left:0});
 		parent = pic.parent();
 		//Binding the progress bar
@@ -165,14 +165,21 @@ jQuery.fn.threesixty = function(options){
 		}
 		
 		if (options.method == "auto") {
-			var speed = options.autoscrollspeed;
-			var newIndex=0;
-			var autoInterval = window.setInterval(function() { pic.attr("srcset", imgArr[++newIndex % imgArr.length])} , speed);
-			options.intervals.push(autoInterval);
-		}
+			var speed    = options.autoscrollspeed;
+			var newIndex = 0;
+			var interval = window.setInterval(function() { 
+				if(!options.currentObject.pause) {
+					pic.attr("srcset", imgArr[++newIndex % imgArr.length])
+				}
+			} , speed);
 			
+			// // options.intervals.push(autoInterval);
+			// options.currentObject.autoInterval = interval;
+			// console.dir(options.currentObject, options.currentObject.autoInterval , interval );
+			}
 
 	});
 	return options.intervals;
 };
+
 

@@ -193,7 +193,6 @@
 
 
 		createProductBox : function (e) {
-			
 			// console.log("createbox :");
 			// console.dir(e.key); 
 			var key;
@@ -218,8 +217,6 @@
 
 			}
 			// console.dir(obj); 
-
-
 
 			FBZ.model.lightbox =  "<div id='lightbox'><a class='close-button-lightbox'><img src='../assets/img/close.svg' alt='close'></a>"
 			+"<div id='lightbox-content'>" //insert clicked link's href into img src
@@ -290,6 +287,19 @@
 				$('#lightbox').addClass("is-fading-in"); 
 				// console.log($('#lightbox'));
 				$('#lightbox').find(".close-button-lightbox").on("click",FBZ.products.closeLightbox); 
+
+				// add the 360 rotation
+			// var key  = e.currentTarget.attributes.productKey.nodeValue;
+			// var obj = FBZ.model.products[key];
+				obj.displayedImage = $('#lightbox').find("picture").find("img");
+				obj.displayedImageWidth = obj.displayedImage.width();
+				obj.displayedImageName = obj.displayedImage.attr("srcset");
+
+				// create an array of all the images available
+				FBZ.control.create360Array(obj);
+
+				var options = obj.displayedImage.threesixty({images:obj.imagesToSpin, method:'click',autoscrollspeed:'200' ,direction:'forward', object: obj,sensibility: 1}); 
+
 
 		},
 
