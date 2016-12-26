@@ -161,10 +161,10 @@
 								</a>
 							</div><!-- end slideshow fav product -->
 				</div>
-					<a class="category-avatar dorm three-column"><h3 class="category-avatar-text">comedor</h3></a>
+					<a class="category-avatar comedor three-column"><h3 class="category-avatar-text">comedor</h3></a>
 					<a class="category-avatar sala-estar three-column"><h3 class="category-avatar-text">dormitorio para niños</h3></a>
 					<a class="category-avatar dorm-ninos three-column"><h3 class="category-avatar-text">sala estar</h3></a>
-					<a class="category-avatar comedor two-column"><h3 class="category-avatar-text">dormitorio</h3></a>
+					<a class="category-avatar dorm two-column"><h3 class="category-avatar-text">dormitorio</h3></a>
 					<a class="category-avatar living two-column"><h3 class="category-avatar-text">living</h3></a>
 
 					<div class="marcas-artistas one-column">
@@ -173,9 +173,10 @@
 							<li><a class="square-list"></a></li>
 							<li><a class="square-list"></a></li>
 							<li><a class="square-list"></a></li>
-							<li><a class="square-list offer-products"><p class="offer-products-text">ofrece tus <br><bold>productos</bold></p></a></li>
+							<li><a href='/ofrecetusproductos' onClick='history.go(0)' class="square-list offer-products">
+							<p class="offer-products-text">ofrece tus <br><bold>productos</bold></p></a></li>
 						</ul>
-						<button class="buy-button ver-marcas-y-artistas" name="comprar" type="comprar" value="comprar">ver mas</button>
+							<button  href='/marcasyartistas' onClick='history.go(0)' class="buy-button ver-marcas-y-artistas" name="comprar" type="comprar" value="comprar">ver mas</button></a>
 					</div>
 				</section>
 			</div><!-- Close container -->
@@ -280,12 +281,17 @@
 						<a class="login-text">Registrate</a>
 
 						<div class="login-box-icon icon-heart">
-							<img class="login-box-heart-svg" src="../assets/img/heart.svg" alt="heart"/>
+								<a href='/favoritos' onClick='history.go(0)'>
+									<div class="small-number"></div>
+									<img class="login-box-heart-svg" src="../assets/img/heart.svg" alt="heart"/>
+								</a>
 						</div>
 
 						<div class="login-box-icon icon-bag">
-							<div class="small-number"></div>
-							<img class="login-box-icon-svg" src="../assets/img/bag.svg" alt="bag"/>
+							<a href='/favoritos/carritodecompras' onClick='history.go(0)'>
+								<div class="small-number"></div>
+								<img class="login-box-icon-svg" src="../assets/img/bag.svg" alt="bag"/> 
+							</a>
 						</div>
 					</div>
 

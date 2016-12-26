@@ -17,8 +17,10 @@ module.exports.tasks = {
 			'politicasdecambio/index.html' : 'politicasdecambio/index_section.html',
 			'preguntasfrecuentes/index.html' : 'preguntasfrecuentes/index_section.html',
 			'productos/index.html' : 'productos/index_section.html',
+			'favoritos/index.html' : 'favoritos/index_section.html',
+			'ofrecetusproductos/index.html' : 'ofrecetusproductos/index_section.html',
 			'registro/index.html' : 'registro/index_section.html',
-			'section/index.html' : 'section/index_section.html',
+			'carritodecompras/index.html' : 'carritodecompras/index_section.html',
 			'terminosycondiciones/index.html' : 'terminosycondiciones/index_section.html'
 			}
 		}

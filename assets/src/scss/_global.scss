@@ -17,6 +17,8 @@
 // lightbox 
 
 
+
+
 //// sliders
 .slider-dot { 
 
@@ -28,12 +30,11 @@
 	cursor:pointer;
 	position:relative;
 	border-radius:50%;
-	background-color: none;
-	border: 1px solid white;
+	background-color:$color-primary;
+
 
 	&.active  {
-		border: none;
-		background-color:white;
+		background-color:$color-secondary;
 	}
 }
 
@@ -49,6 +50,27 @@
 		height: 100%;
 		opacity:1;
 
+	}
+
+}
+
+// slider home 
+
+.slider-home-control {
+
+	top:50%;
+	right:15%;
+	transform: translateY(-50%);
+	height:auto!important;
+	// display:block;
+	opacity:1;
+	
+	.slider-dot { 
+		display: block;
+		margin-left: 0;
+		margin-bottom: 12px;
+		width: 12px;
+		height: 12px;
 	}
 
 }
@@ -224,10 +246,20 @@ h4 {
 section {
 
 	transition:all 1s;
-	padding-top: 220px;
+	padding-top: 150px;
 	&.active {
 		padding-top:50px;
 	}
+	@include respond-min($bp-narrow) {
+	}
+	@include respond-min($bp-mid) {
+		padding-top: 220px;
+
+	 }
+	@include respond-min($bp-wide) {
+	 }
+	@include respond-min($bp-huge) {
+ }
 }
 
 .room-simulator {
@@ -551,16 +583,48 @@ bold {
 
 // home
 
-
+.favoritos  {
+	margin-bottom:30px;
+}
 
 .category-avatar {
 	height:200px;
-	background-color:$color-highlight;
+	// background-color:$color-highlight;
 	display:inline-block;
 	margin:10px;
 	font-size:0.8em;
+	margin-top:30px;
+
+	&.dorm {
+		background-image: url("../../img/bedroom_0.jpg");
+		background-size: cover;
+	}
+
+	&.sala-estar {
+		background-image: url("../../img/living_0.jpg");
+		background-size: cover;
+	}
+
+	&.dorm-ninos {
+		background-image: url("../../img/bedroom_0.jpg");
+		background-size: cover;
+	}
+	&.comedor {
+		background-image: url("../../img/dinningroom_0.jpg");
+		background-size: cover;
+	}
+	&.living {
+		background-image: url("../../img/living_0.jpg");
+		background-size: cover;
+	}
 
 }
+.category-avatar-text {
+	transform:translateY(-150%);
+}
+
+
+
 
 //  helpers columns
 
@@ -646,8 +710,27 @@ bold {
 
 .feature-product {
 	margin: 0 auto;
-	img {
-		width:50vmin;
+	display: flex;
+	position:absolute;
+	transition:all 1s ease-in-out;
+	width:100vw;
+	flex-grow: 2;
+	padding: 0 10vw; 
+	opacity: 0;
+	z-index: 20;
+	transform:translateY(100%);
+
+	picture {
+		width:40vw;
+	}
+	.product-info {
+
+		width: 40vw;
+	}
+	&.active {
+		opacity: 1;
+		z-index: 40;
+		transform:translateY(0);
 	}
 }
 
@@ -732,8 +815,13 @@ bold {
 .slideshow {
 
 	height:50vmin;
+	width:100vw;
 	text-align: center;
 	overflow:hidden;
+	flex-direction: row;
+	display: flex;
+	position:relative;
+
 }
 
 
@@ -1020,9 +1108,26 @@ li {
 .site-menu {
 	width:100%;
 	border-top:1px $color-highlight solid;
-	display: flex; 
+	
 	justify-content: space-between;
 	padding: 0 100px; 
+	display: none;
+
+	@include respond-min($bp-narrow) {
+	
+	 }
+
+	@include respond-min($bp-mid) {
+		display: flex; 
+	 }
+	@include respond-min($bp-wide) {
+			
+	 }
+	@include respond-min($bp-huge) {
+	 }
+
+
+
 }
 
 .menu-btn {
@@ -1037,6 +1142,19 @@ li {
 /// header 
 
 /// login box 
+
+.small-number {
+	background:$color-primary;
+	width:12px;
+	height:12px;
+	position:absolute;
+	top:0px;
+	right:-3px;
+	border-radius:50%;
+	color:white;
+	font-size:0.3em;
+	}
+
 .login-box {
 
 	float: right;
@@ -1065,10 +1183,6 @@ li {
 	}
 }
 
-
-
-
-
 .login-box-icon {
 	width:25px;
 	display: inline-block;
@@ -1089,7 +1203,6 @@ li {
 	font-size: 0.8em;
 
 }
-
 
 .search-box-icon {
 	width:25px;
@@ -1116,6 +1229,7 @@ li {
 	z-index: 100;
 
 	&.active {
+		height: 60px;
 		background-color:white;
 		// background: linear-gradient(to bottom, rgba(255,255,255,0.9) 63%,rgba(255,255,255,0) 90%);
 	}
