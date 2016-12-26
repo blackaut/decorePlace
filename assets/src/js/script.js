@@ -70,11 +70,13 @@
 		$langBtn			:$('.lang-btn'),
 		$footer				:$('footer'),
 		$featureProducts	:$('.feature-products-slideshow'),
-
-		$offerProducts 		:$(".offer-products-text"),
-		$iconBag 			:$(".login-box-icon .icon-bag"),
-		$iconHeart 			:$(".login-box-icon .icon-heart"),
-		$offerProducts 		:$(".offer-products-text"),
+		$favouriteProducts	:$('.favourite-products-slideshow'),
+		$offerProducts 		:$('.offer-products-text'),
+		$iconBag 			:$('.login-box-icon .icon-bag'),
+		$iconHeart 			:$('.login-box-icon .icon-heart'),
+		$offerProducts 		:$('.offer-products-text'),
+		$arrowFavLeft		:$('.favoritos .arrow-left'),
+		$arrowFavRight		:$('.favoritos .arrow-right'),
 
 		// FBZ.view.sliderHomeControl
 	};
@@ -253,7 +255,7 @@
 			"prod_nuevo":"true", // si el producto esta oferta
 			"prod_oferta":"true", // si el producto esta oferta
 			"prod_precio_oferta":"6000", // si el producto esta oferta
-			"prod_destacado":"false",
+			"prod_destacado":"true",
 
 			}
 			FBZ.model.products.producto5 = {
@@ -283,7 +285,7 @@
 			"prod_nuevo":"true", // si el producto esta oferta
 			"prod_oferta":"true", // si el producto esta oferta
 			"prod_precio_oferta":"6000", // si el producto esta oferta
-			"prod_destacado":"false",
+			"prod_destacado":"true",
 
 			}
 			FBZ.model.products.producto6 = {
@@ -312,7 +314,7 @@
 			"prod_nuevo":"true", // si el producto esta oferta
 			"prod_oferta":"true", // si el producto esta oferta
 			"prod_precio_oferta":"6000", // si el producto esta oferta
-			"prod_destacado":"false",
+			"prod_destacado":"true",
 
 			}
 			FBZ.model.products.producto7 = {
@@ -341,7 +343,7 @@
 			"prod_nuevo":"true", // si el producto esta oferta
 			"prod_oferta":"true", // si el producto esta oferta
 			"prod_precio_oferta":"6000", // si el producto esta oferta
-			"prod_destacado":"false",
+			"prod_destacado":"true",
 
 			}
 			FBZ.model.products.producto8 = {
@@ -638,6 +640,7 @@
 		// 	console.log("currentArticule :",FBZ.model.currentArticule);
 		// 	FBZ.model("lala");
 		// }, 
+
 
 		injectSectionScript : function (jsname){
 
@@ -955,6 +958,9 @@
 
 		},
 
+
+
+
 		closeLightbox : function () {
 
 				// console.log("close");
@@ -967,7 +973,21 @@
 		},
 
 
+// arrows fav
+
+		activateFavouritesArrowControl: function () { 
+
+			console.log(FBZ.view.$favouriteProducts.width(),FBZ.view.$favouriteProducts.children().width());
+
+			// FBZ.view.$arrowFavLeft.on('click',moveFavouritesLeft); 	
+			// FBZ.view.$arrowFavRight.on('click',moveFavouritesRight);
+
+
+		},
+
+
 // feature product sliders
+
 
 		populateFeaturedProducts : function () {
 
@@ -982,6 +1002,8 @@
 
 					if (value.prod_destacado.toString() == "true") {
 							FBZ.control.injectFeaturedProduct(value,key);
+							FBZ.control.injectFavouriteProduct(value,key);
+
 							// console.log(key, "prod destacado:",value);
 							FBZ.view.sliderHomeControl.append("<div class='slider-dot'></div>")
 							
@@ -998,6 +1020,9 @@
 
 				FBZ.control.playSlider();
 				FBZ.control.createInterval();
+
+
+				FBZ.control.activateFavouritesArrowControl();
 				// FBZ.view.product = $(".product");
 				// FBZ.view.product.on("click",FBZ.control.createProductBox);
 				// FBZ.view.product.on("mouseover",FBZ.control.load360);
@@ -1006,6 +1031,57 @@
 				// FBZ.control.setupFeaturedSlider();
 
 		},
+
+		injectFavouriteProduct : function (obj,key) {
+
+			var newTag = "";
+			var offerTag = "";
+			var lineThrough = "";
+
+			if (obj.prod_nuevo.toString() == "true" ) {
+				newTag = "<div class='product-new-tag'>nuevo</div>";
+			}
+
+			if (obj.prod_oferta.toString() == "true" ) {
+				offerTag = "<div class='product-offer-tag'>"
+								+"<div class='product-offer-text-wrapper'>"
+									+"<h6 class='product-offer-text'>oferta</h6>"
+									+"<p class='product-offer-price'>"
+									+obj.prod_precio_oferta+"</p>"
+							+"</div>"
+						+"</div>";
+				lineThrough = " line-through";
+			}
+			obj.key = key;
+
+			var currentProduct = "<div class='favourite-product' productId='"+obj.prod_id+"' productKey='"+key+"'>"+
+									newTag+offerTag+
+									"<div class='box-icon icon-heart'>"+
+										"<img class='login-box-heart-svg' src='/assets/img/heart.svg' alt='heart'/>"+
+									"</div>"+
+									// "<img class='product-image' alt='product' src='/assets/img/chair_dummy.png'>"+
+									"<picture class='product-360'>"+
+										"<source srcset='"+obj.prod_imagen_200+"' media='(max-width: 320px)'/>"+
+										"<source srcset='"+obj.prod_imagen_500+"' media='(max-width: 650px)'/>"+
+									"<source srcset='"+obj.prod_imagen_1000+"' media='(max-width: 900px)'/>"+
+									"<img srcset='"+obj.prod_imagen_1000+"' alt='"+obj.prod_nombre+"'/>"+
+									"</picture>"+
+									"<div class='product-info-favourite'>"+
+										"<p class='item-name'>"+obj.prod_nombre+"</p>"+
+										"<p class='item-brand'>"+obj.prod_marca+"</p>"+
+										"<p class='item-price"+lineThrough+"'>"+obj.prod_precio+ " CLP</p>"+
+										// "<button class='buy-button' name='comprar' type='comprar' value='comprar'>COMPRAR</button>"+
+									"</div>"+
+								"</div>";
+			// console.log(FBZ.view.$favouriteProducts,currentProduct);
+
+			FBZ.view.$favouriteProducts.append(currentProduct);
+			FBZ.view.$favouriteProducts.children().on("click",FBZ.control.createProductBox);
+			FBZ.view.$favouriteProducts.children().on("click",FBZ.control.deleteInterval);
+
+		},
+
+
 
 		injectFeaturedProduct : function (obj,key) {
 
@@ -1056,9 +1132,9 @@
 			
 			FBZ.model.featuredProducts.push(currentProduct);
 
-
 			FBZ.view.$featureProducts.append(currentProduct);
-
+			FBZ.view.$featureProducts.children().on("click",FBZ.control.createProductBox);
+			FBZ.view.$featureProducts.children().on("click",FBZ.control.deleteInterval);
 
 			// var $currentCategory = $("."+ obj.prod_categoria);
 			// console.log($currentCategory,"<li class='element-category-product'><a>"+obj.prod_nombre+"</a></li>");
@@ -1085,7 +1161,7 @@
 		createInterval : function () { 
 			 FBZ.model.sliderClock = setInterval( function() 
 		{
-				console.log("interval");
+				// console.log("interval");
 				FBZ.control.playSlider();
         }, FBZ.model.sliderTime);
 		}, 
@@ -1098,7 +1174,7 @@
 		playSlider: function () { 
 
 			FBZ.control.changeImageToIndex(FBZ.model.sliderCurrentImage);
-			console.log(FBZ.model.sliderCurrentImage, FBZ.model.sliderTotalImage);
+			// console.log(FBZ.model.sliderCurrentImage, FBZ.model.sliderTotalImage);
 			
 			if(FBZ.model.sliderCurrentImage < FBZ.model.sliderTotalImage) { 
 				FBZ.model.sliderCurrentImage ++;
@@ -1108,7 +1184,6 @@
 			}
 
 		}
-
 	};
 					// <div class="feature-product">
 					// 		<img class="product-image" alt="Feature product" src="/assets/img/chair_dummy.png">

@@ -118,7 +118,8 @@ p {
 	width: 13vw;
 	display: inline-block;
 	float: left;
-	display:inline-block;
+	// just in the meanwhile
+	display:none;
 }
 
 .lightbox-main {
@@ -585,6 +586,7 @@ bold {
 
 .favoritos  {
 	margin-bottom:30px;
+	position: relative;
 }
 
 .category-avatar {
@@ -706,15 +708,22 @@ bold {
 	color:$color-secondary;
 }
 
+.progressBar {
+	display:none!important;
+}
 
 
 .feature-product {
+	cursor:pointer;
 	margin: 0 auto;
+
 	display: flex;
+	align-items: center;
+	flex-grow: 2;
+
 	position:absolute;
 	transition:all 1s ease-in-out;
 	width:100vw;
-	flex-grow: 2;
 	padding: 0 10vw; 
 	opacity: 0;
 	z-index: 20;
@@ -722,6 +731,15 @@ bold {
 
 	picture {
 		width:40vw;
+
+		@include respond-min($bp-wide) {
+			width:35vw;
+
+		}
+		@include respond-min($bp-huge) {
+			width:30vw;
+		}
+
 	}
 	.product-info {
 
@@ -751,6 +769,7 @@ bold {
 	padding:0 25px;
 	position:relative;
 	display:inline-block;
+	cursor: pointer;
 
 	.item-name {
 		font-size: .7em;
@@ -821,6 +840,8 @@ bold {
 	flex-direction: row;
 	display: flex;
 	position:relative;
+	align-items: center;
+
 
 }
 
@@ -870,7 +891,7 @@ bold {
 	text-align: left;
 	width:20%;
     vertical-align: top;
-    padding-top: 100px;
+    // padding-top: 100px;
 }
 
 /// footer
@@ -878,12 +899,10 @@ bold {
 .logo-tsf {
     float: right;
     width: 140px;
-    margin-top: 10px;
 }
 .logo-blackaut {
 	float: right;
 	width: 140px;
-	margin-top: 50px;
 }
 
 
@@ -893,9 +912,24 @@ bold {
 	position:absolute;
 	right:0;
 	top:0;
-	transform: scale(0.5) translateY(-50%) translateX(60%);
 	z-index:-1;
+	display:none;
 
+	@include respond-min($bp-narrow) {
+	}
+	@include respond-min($bp-mid) {
+		display:block;
+		transform: scale(0.5) translateY(-50%) translateX(80%);
+
+	}
+	@include respond-min($bp-wide) {
+		transform: scale(0.5) translateY(-50%) translateX(70%);
+
+	}
+	@include respond-min($bp-huge) {
+		transform: scale(0.5) translateY(-50%) translateX(60%);
+
+	}
 }
 
 
@@ -906,8 +940,22 @@ bold {
 	left:0;
 	transform: translateY(25%) translateX(25%);
 	z-index:-1;
-}
 
+	display:none;
+	
+	@include respond-min($bp-mid) {
+		display:block;
+		transform: translateY(25%) translateX(25%);
+
+	}
+	@include respond-min($bp-wide) {
+		transform: translateY(25%) translateX(15%);
+
+	}
+	@include respond-min($bp-huge) {
+		transform: translateY(25%) translateX(5%);
+	}
+}
 
 .footer-top {
 	padding: 50px 0;
@@ -927,28 +975,46 @@ bold {
 }
 
 .newsletter-subscribe-button {
-	width:20%;
 	height:100%;
 	text-transform:uppercase;
+	font-size:0.8em;
+
 }
 
 
 .newsletter-subscribe-box {
 
 	margin: 0 auto;
-	width:60%;
-	padding:0;
+	width:100%;
+	padding:0 10vw;
 	height:40px;
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+
+	@include respond-min($bp-narrow) {
+
+	}
+	@include respond-min($bp-mid) {
+		padding:0 20vw;
+	}
+	@include respond-min($bp-wide) {
+
+	}
+	@include respond-min($bp-huge) {
+	}
+
+
 }
 
 
 .newsletter-subscribe {
 	border:$color-darksidegray 1px solid;
 	background-color:transparent;
-	width:79%;
 	margin:0;
 	padding:0;
 	height:100%;
+	 flex-grow: 2; 
 }
 
 .newsletter-title {
@@ -1001,7 +1067,25 @@ bold {
 	display:inline;
 	padding:5px;
 	img {
+		width:30px;
+	
+	@include respond-min($bp-narrow) {
+		width:40px;
+	
+	}
+	@include respond-min($bp-mid) {
 		width:50px;
+	
+	}
+	@include respond-min($bp-wide) {
+		width:60px;
+
+	 }
+	@include respond-min($bp-huge) {
+		width:70px;
+
+	 }
+
 	}
 }
 
@@ -1009,11 +1093,28 @@ bold {
 
 
 .footer-logos {
-	display:inline-block;
-	position:relative;
-	width:50%;
+	display:none;
+	// position:relative;
+	// width:100%;
 	height:100%;
 	float: right;
+	flex-direction: row;
+	align-items: center;
+	transform:translateY(15%);
+	
+	@include respond-min($bp-narrow) {
+		width:30%;
+		display:flex;
+	
+
+	}
+	@include respond-min($bp-wide) {
+
+
+	}
+	@include respond-min($bp-huge) {
+	}
+
 }
 
 
@@ -1033,8 +1134,20 @@ bold {
 }
 .footer-nav {
 
-	width:50%;
+	width:100%;
 	display: inline-block;
+
+
+	@include respond-min($bp-narrow) {
+			width:70%;
+	 }
+	@include respond-min($bp-mid) {
+	 }
+	@include respond-min($bp-wide) {
+	 }
+	@include respond-min($bp-huge) {
+	 }
+
 }
 
 .logo-footer-shield {
@@ -1125,8 +1238,6 @@ li {
 	 }
 	@include respond-min($bp-huge) {
 	 }
-
-
 
 }
 
@@ -1229,7 +1340,7 @@ li {
 	z-index: 100;
 
 	&.active {
-		height: 60px;
+		height: 80px;
 		background-color:white;
 		// background: linear-gradient(to bottom, rgba(255,255,255,0.9) 63%,rgba(255,255,255,0) 90%);
 	}
