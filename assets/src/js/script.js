@@ -100,6 +100,8 @@
 		//activate complementarySections
 		FBZ.control.addNumberLoginBox();
 
+		FBZ.control.activateBurger();
+
 		},
 
 		addNumberLoginBox: function () {
@@ -973,17 +975,33 @@
 		},
 
 
+// burger menu 
+
+
+			activateBurger: function () {
+
+				var menuButton = document.getElementById('menuButton');
+				menuButton.addEventListener('click', function (e) {
+    			menuButton.classList.toggle('is-active');
+ 				e.preventDefault();
+				});
+
+
+			},
+
+
+
 // arrows fav
 
-		activateFavouritesArrowControl: function () { 
+		// activateFavouritesArrowControl: function () { 
 
-			console.log(FBZ.view.$favouriteProducts.width(),FBZ.view.$favouriteProducts.children().width());
+		// 	console.log(FBZ.view.$favouriteProducts.width(),FBZ.view.$favouriteProducts.children().width());
 
-			// FBZ.view.$arrowFavLeft.on('click',moveFavouritesLeft); 	
-			// FBZ.view.$arrowFavRight.on('click',moveFavouritesRight);
+		// 	// FBZ.view.$arrowFavLeft.on('click',moveFavouritesLeft); 	
+		// 	// FBZ.view.$arrowFavRight.on('click',moveFavouritesRight);
 
 
-		},
+		// },
 
 
 // feature product sliders
@@ -1022,7 +1040,7 @@
 				FBZ.control.createInterval();
 
 
-				FBZ.control.activateFavouritesArrowControl();
+				// FBZ.control.activateFavouritesArrowControl();
 				// FBZ.view.product = $(".product");
 				// FBZ.view.product.on("click",FBZ.control.createProductBox);
 				// FBZ.view.product.on("mouseover",FBZ.control.load360);

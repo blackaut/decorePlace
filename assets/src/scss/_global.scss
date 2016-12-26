@@ -18,7 +18,6 @@
 
 
 
-
 //// sliders
 .slider-dot { 
 
@@ -1217,6 +1216,35 @@ h3 {
 li {
 	list-style-type: none;
 }
+
+
+// burger icon 
+
+.burger-icon {
+    @include burger(27px, 1px, 10px, $color-secondary);
+}
+.circle.is-active .burger-icon {
+    @include burger-to-cross;
+}
+
+.icon-burger {
+
+	display:block;
+	padding-left:10px;
+	@include respond-min($bp-narrow) {
+	}
+	@include respond-min($bp-mid) {
+		display:none!important;
+	 }
+	@include respond-min($bp-wide) {
+	 }
+	@include respond-min($bp-huge) {
+	 }
+
+}
+
+
+// site menu
 
 .site-menu {
 	width:100%;
