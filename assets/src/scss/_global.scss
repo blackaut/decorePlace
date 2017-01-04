@@ -1223,19 +1223,26 @@ li {
 .burger-icon {
     @include burger(27px, 1px, 10px, $color-secondary);
 }
-.circle.is-active .burger-icon {
+.icon-burger.is-active .burger-icon {
     @include burger-to-cross;
+}
+
+.menu-button {
+	cursor:pointer;
+	background:rgba(255,255,255,0);
 }
 
 .icon-burger {
 
+	background:rgba(255,255,255,0);
+	width: auto!important;
 	display:block;
 	padding-left:10px;
 	@include respond-min($bp-narrow) {
 	}
 	@include respond-min($bp-mid) {
 		display:none!important;
-	 }
+	}
 	@include respond-min($bp-wide) {
 	 }
 	@include respond-min($bp-huge) {
@@ -1247,9 +1254,11 @@ li {
 // site menu
 
 .site-menu {
+
 	width:100%;
 	border-top:1px $color-highlight solid;
-	
+	flex-direction: row;
+
 	justify-content: space-between;
 	padding: 0 100px; 
 	display: none;
@@ -1267,6 +1276,17 @@ li {
 	@include respond-min($bp-huge) {
 	 }
 
+	 &.active {
+
+	 	// display: block;
+	 	background-color:rgba(255,255,255,0.8);
+		height:100%;
+		flex-direction: column;
+
+
+
+	 }
+
 }
 
 .menu-btn {
@@ -1276,6 +1296,7 @@ li {
 	color:$color-primary;
 	font-size:0.8em;
 
+	
 	}
 
 /// header 
@@ -1326,6 +1347,7 @@ li {
 	width:25px;
 	display: inline-block;
 	transform:translateY(7px);
+	cursor:pointer;
 }
 
 

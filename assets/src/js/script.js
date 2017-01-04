@@ -77,7 +77,8 @@
 		$offerProducts 		:$('.offer-products-text'),
 		$arrowFavLeft		:$('.favoritos .arrow-left'),
 		$arrowFavRight		:$('.favoritos .arrow-right'),
-
+		$menuButton			:$('#menuButton'),
+		$siteMenu			:$('.site-menu'),
 		// FBZ.view.sliderHomeControl
 	};
 
@@ -976,20 +977,19 @@
 
 
 // burger menu 
-
-
 			activateBurger: function () {
 
-				var menuButton = document.getElementById('menuButton');
-				menuButton.addEventListener('click', function (e) {
-    			menuButton.classList.toggle('is-active');
- 				e.preventDefault();
-				});
-
+				// var menuButton = document.getElementById('menuButton');
+				FBZ.view.$menuButton.on("click",FBZ.control.onClickBurger);
 
 			},
 
-
+			onClickBurger : function (e) {
+				FBZ.view.$menuButton.toggle( "is-active" );
+				FBZ.view.$siteMenu.toggle("active" );
+				e.preventDefault();
+				console.log("burger clicked");
+			},
 
 // arrows fav
 
