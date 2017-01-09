@@ -77,8 +77,10 @@
 		$offerProducts 		:$('.offer-products-text'),
 		$arrowFavLeft		:$('.favoritos .arrow-left'),
 		$arrowFavRight		:$('.favoritos .arrow-right'),
-		$menuButton			:$('#menuButton'),
+		$menuButton			:$('.menu-button'),
 		$siteMenu			:$('.site-menu'),
+		$siteButton			:$('.menu-btn'),
+		$burgerParts		:$('.burger-part'),
 		// FBZ.view.sliderHomeControl
 	};
 
@@ -100,7 +102,7 @@
 
 		//activate complementarySections
 		FBZ.control.addNumberLoginBox();
-
+		FBZ.control.activateSearchExpansion();
 		FBZ.control.activateBurger();
 
 		},
@@ -459,8 +461,6 @@
 			var obj = FBZ.model.products[key];
 			return obj;
 		},
-
-
 
 		create360Array : function (obj) {
 
@@ -974,7 +974,11 @@
 
 				// $( "div" ).remove( '#lightbox');
 		},
+			activateSearchExpansion: function () {
+				
+				$(".search-box-icon").click( function() { $(".search-text").focus() });
 
+			},
 
 // burger menu 
 			activateBurger: function () {
@@ -985,8 +989,10 @@
 			},
 
 			onClickBurger : function (e) {
-				FBZ.view.$menuButton.toggle( "is-active" );
-				FBZ.view.$siteMenu.toggle("active" );
+
+				FBZ.view.$burgerParts.toggle("cross");
+				// FBZ.view.$siteMenu.toggle("active" );
+				// FBZ.view.$siteButton.toggle( "is-active");
 				e.preventDefault();
 				console.log("burger clicked");
 			},
