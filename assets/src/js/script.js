@@ -103,30 +103,45 @@
 		FBZ.control.headerTransform();
 
 		//activate complementarySections
-		FBZ.control.addNumberLoginBox(0,0);
+		 
 		FBZ.control.activateSearchExpansion();
 		FBZ.control.activateBurger();
 
+		// this function add the top number of the login box, first favoirtes and the carrito
+		FBZ.control.updateNumbersLoginBox(0,0);
+
 		},
 
-		addNumberLoginBox: function (favoritos,comprados) {
+
+		updateNumbersLoginBox: function (favoritos,comprados) {
 
 			FBZ.model.currentFavouritedProducts = favoritos;
 			FBZ.model.currentShoppedProducts = comprados;
+			var heartIconToDisplay = FBZ.model.currentFavouritedProducts;
+			var bagIconToDisplay = FBZ.model.currentShoppedProducts;
 
-			console.log($('.small-number')[0]);
+			// to max out the numbers
+			if ( heartIconToDisplay > 99 ) {
+				heartIconToDisplay = 99; 
+			}
+
+			if ( bagIconToDisplay >	 99 ) {
+				bagIconToDisplay = 99; 
+			}
+
 			// $('.small-number')(0).hide();
 
-			if ( FBZ.model.currentFavouritedProducts > 0 ) {
-				FBZ.view.$numberIconHeart.append(FBZ.model.currentFavouritedProducts);	
+			if ( heartIconToDisplay > 0 ) {
+				FBZ.view.$numberIconHeart.append(heartIconToDisplay);	
 				FBZ.control.fadeShow(FBZ.view.$numberIconHeart);
 
 			}else {
 				FBZ.control.fadeHide(FBZ.view.$numberIconHeart);
 			}
 
-			if ( FBZ.model.currentShoppedProducts > 0 ) {
-				FBZ.view.$numberIconBag.append(FBZ.model.currentShoppedProducts);	
+			if ( bagIconToDisplay > 0 ) {
+				FBZ.view.$numberIconBag.append(bagIconToDisplay);
+				FBZ.control.fadeShow(FBZ.view.$numberIconBag);	
 
 			} else {
 				FBZ.control.fadeHide(FBZ.view.$numberIconBag);
