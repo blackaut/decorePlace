@@ -74,6 +74,8 @@
 		$offerProducts 		:$('.offer-products-text'),
 		$iconBag 			:$('.login-box-icon .icon-bag'),
 		$iconHeart 			:$('.login-box-icon .icon-heart'),
+		$numberIconHeart	:$($('.small-number')[0]),
+		$numberIconBag		:$($('.small-number')[1]),
 		$offerProducts 		:$('.offer-products-text'),
 		$arrowFavLeft		:$('.favoritos .arrow-left'),
 		$arrowFavRight		:$('.favoritos .arrow-right'),
@@ -101,32 +103,37 @@
 		FBZ.control.headerTransform();
 
 		//activate complementarySections
-		FBZ.control.addNumberLoginBox();
+		FBZ.control.addNumberLoginBox(0,0);
 		FBZ.control.activateSearchExpansion();
 		FBZ.control.activateBurger();
 
 		},
 
-		addNumberLoginBox: function () {
+		addNumberLoginBox: function (favoritos,comprados) {
 
-			FBZ.model.currentFavouritedProducts = 3;
+			FBZ.model.currentFavouritedProducts = favoritos;
+			FBZ.model.currentShoppedProducts = comprados;
+
+			console.log($('.small-number')[0]);
+			// $('.small-number')(0).hide();
 
 			if ( FBZ.model.currentFavouritedProducts > 0 ) {
-				FBZ.view.$iconHeart.append(FBZ.model.currentFavouritedProducts);	
-				FBZ.control.fadeShow(FBZ.view.$iconHeart);
+				FBZ.view.$numberIconHeart.append(FBZ.model.currentFavouritedProducts);	
+				FBZ.control.fadeShow(FBZ.view.$numberIconHeart);
 
 			}else {
-				FBZ.control.fadeHide(FBZ.view.$iconHeart);
+				FBZ.control.fadeHide(FBZ.view.$numberIconHeart);
 			}
 
 			if ( FBZ.model.currentShoppedProducts > 0 ) {
-				FBZ.view.$iconBag.append(FBZ.model.currentFavouritedProducts);	
+				FBZ.view.$numberIconBag.append(FBZ.model.currentShoppedProducts);	
 
 			} else {
-				FBZ.control.fadeHide(FBZ.view.$iconHeart);
-
+				FBZ.control.fadeHide(FBZ.view.$numberIconBag);
 			}
 		},
+
+
 
 		// jumpTofavoritos: function () {
 		// 	$offerProducts.on("click",)

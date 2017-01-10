@@ -137,22 +137,22 @@ p {
 .close-button-lightbox {
 	position:absolute;
 	top: 20px;
-    right: 20px;
-    width: 25px;
-    z-index: 910;
-    cursor: pointer;
+	right: 20px;
+	width: 25px;
+	z-index: 910;
+	cursor: pointer;
 }
 
 #lightbox {
-    position:fixed; /* keeps the lightbox window in the current viewport */
-    top:0; 
-    left:0; 
-    width:100%; 
-    height:100%;
-    background-color: rgba(255,255,255,0.9); 
-    text-align:center;
-    z-index: 900;
-    opacity:0;
+	position:fixed; /* keeps the lightbox window in the current viewport */
+	top:0; 
+	left:0; 
+	width:100%; 
+	height:100%;
+	background-color: rgba(255,255,255,0.9); 
+	text-align:center;
+	z-index: 900;
+	opacity:0;
 }
 
 // plazos de entrega
@@ -227,8 +227,8 @@ h4 {
 }
 
 .nosotros-picture {
-    padding-right: 50px;
-    img {
+	padding-right: 50px;
+	img {
 		border-radius: 50%;
 	}
 }
@@ -280,8 +280,8 @@ section {
 }
 .product-container {
 	max-width: 68vw;
-    display: inline-block;
-    float: left;
+	display: inline-block;
+	float: left;
 }
 .productos-sidebar {
 	height:100vh;
@@ -308,7 +308,7 @@ section {
 	text-transform:uppercase;
 	font-size:0.7em;
 	vertical-align: middle;
-	    z-index: 20;
+		z-index: 20;
 }
 
 .product-offer-tag {
@@ -323,12 +323,11 @@ section {
 	font-size:0.7em;
 	vertical-align: middle; 
 	height: 60px;
-  width: 60px;
-  display: table-cell;
-  text-align: center;
-  vertical-align: middle;
-      z-index: 20;
-  border-radius: 50%; /* may require vendor prefixes */
+	width: 60px;
+	display: table-cell;
+	text-align: center;
+	z-index: 20;
+	border-radius: 50%; /* may require vendor prefixes */
 	background-color:$color-darksidegray;
 
 }
@@ -337,67 +336,67 @@ section {
 
 /* Style the buttons that are used to open and close the accordion panel */
 button.accordion {
-    background-color: $color-highlight;
-    color: white;
-    cursor: pointer;
-    padding: 18px;
-    width: 100%;
-    text-align: left;
-    border: none;
-    outline: none;
-    transition: 0.4s;
-    font-size: 0.8;
-    &:after {
-    	color:white;
-    }
+	background-color: $color-highlight;
+	color: white;
+	cursor: pointer;
+	padding: 18px;
+	width: 100%;
+	text-align: left;
+	border: none;
+	outline: none;
+	transition: 0.4s;
+	font-size: 0.8;
+	&:after {
+		color:white;
+	}
 }
 
 /* Add a background color to the button if it is clicked on (add the .active class with JS), and when you move the mouse over it (hover) */
 button.accordion.active, button.accordion:hover {
-    background-color: #ddd;
+	background-color: #ddd;
 }
 
 /* Style the accordion panel. Note: hidden by default */
 div.panel {
-    padding: 0 18px;
-    background-color: white;
-    display: none;
+	padding: 0 18px;
+	background-color: white;
+	display: none;
 }
 
 
 
 
 div.panel {
-    padding: 0 18px;
-    background-color: white;
-    max-height: 0;
-    overflow: hidden;
-    transition: 0.6s ease-in-out;
-    opacity: 0;
+	padding: 0 18px;
+	background-color: white;
+	max-height: 0;
+	overflow: hidden;
+	transition: 0.6s ease-in-out;
+	opacity: 0;
 }
 
 div.panel.show {
-    opacity: 1;
-    max-height: 1000px; /* Whatever you like, as long as its more than the height of the content (on all screen sizes) */
+	opacity: 1;
+	max-height: 1000px; /* Whatever you like, as long as its more than the height of the content (on all screen sizes) */
 }
 
 button.accordion:after {
-    content: '\02795'; /* Unicode character for "plus" sign (+) */
-    font-size: 13px;
-    color: white;
-    float: right;
-    margin-left: 5px;
+	content: '\02795'; /* Unicode character for "plus" sign (+) */
+	font-size: 13px;
+	color: white;
+	float: right;
+	margin-left: 5px;
 }
 
 button.accordion.active:after {
-    content: "\2796"; /* Unicode character for "minus" sign (-) */
+	content: "\2796"; /* Unicode character for "minus" sign (-) */
 }
 
 
 
 // .product-offer-tag:after {
-// 	content:"";
-// 	border-radius:50%;
+//  content:"";
+//  border-radius:50%;
 // }
 
 .line-through {
@@ -412,13 +411,13 @@ button.accordion.active:after {
 	// width:30vw;
 	padding: 5px 5px 5px  37px;
 	background-color:$color-highlight;
-    cursor: pointer;
-    width: 100%;
-    text-align: left;
-    transition: 0.4s;
+	cursor: pointer;
+	width: 100%;
+	text-align: left;
+	transition: 0.4s;
 	list-style-type: none;
-    font-family: 'Montserrat-Light';
-    font-size: 1em;
+	font-family: 'Montserrat-Light';
+	font-size: 1em;
 
 	&.hover {
 		background-color:$color-darklight;
@@ -433,15 +432,15 @@ button.accordion.active:after {
 
 
 .sidebar-category-product:after {
-    content: '\02795'; /* Unicode character for "plus" sign (+) */
-    font-size: 13px;
-    color: #FFF;
-    float: right;
-    margin-left: 20px;
+	content: '\02795'; /* Unicode character for "plus" sign (+) */
+	font-size: 13px;
+	color: #FFF;
+	float: right;
+	margin-left: 20px;
 }
 
 .sidebar-category-product.accordion.active:after {
-    content: "\2796"; /* Unicode character for "minus" sign (-) */
+	content: "\2796"; /* Unicode character for "minus" sign (-) */
 }
 
 
@@ -450,23 +449,23 @@ button.accordion.active:after {
 
 /* Style the accordion panel. Note: hidden by default */
 .panel {
-    padding: 0 18px;
-    background-color: white;
-   	display: none;
-    height: 0;
+	padding: 0 18px;
+	background-color: white;
+	display: none;
+	height: 0;
 	transition: 0.6s ease-in-out;
 	opacity: 0;
 	user-select: none;
 
 	a li {
 		user-select: none;
-    }
+	}
 
-    &.show  {
-    	display: block;
-    	  opacity: 1;
-    	   height: auto;
-    }
+	&.show  {
+		display: block;
+		  opacity: 1;
+		   height: auto;
+	}
 }
 
 .favourite-products-slideshow {
@@ -486,12 +485,12 @@ button.accordion.active:after {
 .arrow {
 	// top:50%;
 	// transform: translateY(-50%);
-    z-index: 10;
-    height: 100%;
-    display: inline-block;
-    width: 40px;
-    position: absolute;
-    top: 0;
+	z-index: 10;
+	height: 100%;
+	display: inline-block;
+	width: 40px;
+	position: absolute;
+	top: 0;
 	img {
 		height:40px;
 		position:absolute;
@@ -560,7 +559,7 @@ button.accordion.active:after {
 }
 
 bold {
-	font-family: "Montserrat-Regular";	
+	font-family: "Montserrat-Regular";  
 }
 
 .marcas-list {
@@ -889,15 +888,15 @@ bold {
 	display:inline-block;
 	text-align: left;
 	width:20%;
-    vertical-align: top;
-    // padding-top: 100px;
+	vertical-align: top;
+	// padding-top: 100px;
 }
 
 /// footer
 
 .logo-tsf {
-    float: right;
-    width: 140px;
+	float: right;
+	width: 140px;
 }
 .logo-blackaut {
 	float: right;
@@ -1161,7 +1160,7 @@ bold {
 
 .footer-endline {
 
-    padding: 25px 50px;
+	padding: 25px 50px;
 	width:100%;
 	height:60px;
 	background-color:$color-darklight;
@@ -1176,7 +1175,7 @@ bold {
 
 footer {
 
-    font-family: 'Montserrat-Light';
+	font-family: 'Montserrat-Light';
 	// UNCOMENT THIS TO MAKE THE FOOTER VISIBLE
 	// display:none;
 	text-align: center;
@@ -1223,8 +1222,8 @@ li {
 .icon-burger {
 
 	display: inline-block;
-    cursor: pointer;
-    background-color:transparent;
+	cursor: pointer;
+	background-color:transparent;
 // for responsive stuff use as it follows
 
 @include respond-min($bp-narrow) {
@@ -1242,33 +1241,32 @@ li {
 }
 
 .bar1, .bar2, .bar3 {
-    width: 26px;
-    height: 1px;
-    background-color: $color-secondary;
-    margin: 7px 0;
-    transition: 0.4s;
-    transform:translateY(5px);
+	width: 26px;
+	height: 1px;
+	background-color: $color-secondary;
+	margin: 7px 0;
+	transition: 0.4s;
+	transform:translateY(0px);
 }
 
 /* Rotate first bar */
  .bar1 {
- 	&.cross {
-		transform: translateY(5px) rotate(-45deg) translate(-6px, 6px) ;
+	&.cross {
+		transform: translateY(0px) rotate(-45deg) translate(-6px, 6px) ;
 	}
 }
 /* Fade out the second bar */
 .bar2 {
 	&.cross{
-    opacity: 0;
+	opacity: 0;
 	}
 }
 
 /* Rotate last bar */
 .bar3 {
 	&.cross {
-    transform:  translateY(5px) rotate(45deg) translate(-6px, -6px) ;
+	transform:  translateY(0px) rotate(45deg) translate(-6px, -6px) ;
 	}
-
 }
 
 .menu-button {
@@ -1278,20 +1276,20 @@ li {
 
 // .icon-burger {
 
-// 	background:rgba(255,255,255,0);
-// 	width: auto!important;
-// 	display:block;
-// 	padding-left:10px;
+//  background:rgba(255,255,255,0);
+//  width: auto!important;
+//  display:block;
+//  padding-left:10px;
 
-// 	@include respond-min($bp-narrow) {
-// 	}
-// 	@include respond-min($bp-mid) {
-// 		display:none!important;
-// 	}
-// 	@include respond-min($bp-wide) {
-// 	 }
-// 	@include respond-min($bp-huge) {
-// 	 }
+//  @include respond-min($bp-narrow) {
+//  }
+//  @include respond-min($bp-mid) {
+//      display:none!important;
+//  }
+//  @include respond-min($bp-wide) {
+//   }
+//  @include respond-min($bp-huge) {
+//   }
 // }
 
 
@@ -1328,8 +1326,8 @@ li {
 
 	 &.active {
 		padding-top:5vh;
-	 	// display: block;
-	 	background-color:$color-highlight;
+		// display: block;
+		background-color:$color-highlight;
 		height:auto;
 		padding-bottom:50vh;
 		flex-direction: column;
@@ -1365,6 +1363,8 @@ li {
 /// login box 
 
 .small-number {
+
+	font-family: 'Montserrat-Light';
 	background:$color-primary;
 	width:12px;
 	height:12px;
@@ -1374,14 +1374,19 @@ li {
 	border-radius:50%;
 	color:white;
 	font-size:0.3em;
-	}
+	text-align: center;
+	font-size: 8px;
+	line-height: 12px;
+	transition:all 1s;
+
+}
 
 .login-box {
 
 
 	transform: scale(0.7);
 
-    transform-origin: 100%;
+	transform-origin: 100%;
 	position:absolute;
 	right:0;
 	top:0;
@@ -1429,6 +1434,8 @@ li {
 }
 
 .login-box-icon {
+
+	vertical-align: top;
 	width:25px;
 	display: inline-block;
 	transform:translateY(7px);
@@ -1437,6 +1444,9 @@ li {
 
 }
 
+.login-box-heart-svg {
+	padding-top:5px;
+}
 
 .login-box-icon-svg {
 	width:20px;
@@ -1445,6 +1455,8 @@ li {
 
 
 .login-text {
+
+	padding-top: 11px;
 	font-family: 'Montserrat-Hairline';
 	color:$color-primary;
 	cursor:pointer;
@@ -1452,7 +1464,7 @@ li {
 	display:none;
 
 	@include respond-min($bp-narrow) {
- 	}
+	}
 	@include respond-min($bp-mid) {
 	display:inline-block;
 	 }
@@ -1487,9 +1499,9 @@ li {
 
 // logo header
 .header-logo {
-    display: inline-block;
-     margin: 0 auto;
-    transition: all 2s;
+	display: inline-block;
+	 margin: 0 auto;
+	transition: all 2s;
 	// position:absolute;
 	// left:50%;
 	// transform:translateX(-50%);
