@@ -77,7 +77,7 @@
 		$offerProducts 		:$('.offer-products-text'),
 		$arrowFavLeft		:$('.favoritos .arrow-left'),
 		$arrowFavRight		:$('.favoritos .arrow-right'),
-		$menuButton			:$('.menu-button'),
+		$menuButton			:$('.icon-burger'),
 		$siteMenu			:$('.site-menu'),
 		$siteButton			:$('.menu-btn'),
 		$burgerParts		:$('.burger-part'),
@@ -990,9 +990,9 @@
 
 			onClickBurger : function (e) {
 
-				FBZ.view.$burgerParts.toggle("cross");
-				// FBZ.view.$siteMenu.toggle("active" );
-				// FBZ.view.$siteButton.toggle( "is-active");
+				FBZ.view.$burgerParts.toggleClass("cross");
+				FBZ.view.$siteMenu.toggleClass("active" );
+				FBZ.view.$siteButton.toggleClass( "active");
 				e.preventDefault();
 				console.log("burger clicked");
 			},

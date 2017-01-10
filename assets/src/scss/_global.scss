@@ -1220,15 +1220,29 @@ li {
 // $width: 30px, $height: 5px, $gutter: 3px, $color: #000, $border-radius: 0, $transition-duration: .3s) {
 // burger icon 
 
-.burger-icon {
+.icon-burger {
 
-    display: inline-block;
+	display: inline-block;
     cursor: pointer;
     background-color:transparent;
+// for responsive stuff use as it follows
+
+@include respond-min($bp-narrow) {
+ }
+@include respond-min($bp-mid) {
+	 
+	   display: none!important;
+ }
+@include respond-min($bp-wide) {
+ }
+@include respond-min($bp-huge) {
+ }
+
+
 }
 
 .bar1, .bar2, .bar3 {
-    width: 25px;
+    width: 26px;
     height: 1px;
     background-color: $color-secondary;
     margin: 7px 0;
@@ -1237,18 +1251,24 @@ li {
 }
 
 /* Rotate first bar */
-.cross .bar1 {
-    transform: translateY(5px) rotate(-45deg) translate(-9px, 6px) ;
+ .bar1 {
+ 	&.cross {
+		transform: translateY(5px) rotate(-45deg) translate(-6px, 6px) ;
+	}
 }
-
 /* Fade out the second bar */
-.cross .bar2 {
+.bar2 {
+	&.cross{
     opacity: 0;
+	}
 }
 
 /* Rotate last bar */
-.cross .bar3 {
-    transform:  translateY(5px) rotate(45deg) translate(-8px, -8px) ;
+.bar3 {
+	&.cross {
+    transform:  translateY(5px) rotate(45deg) translate(-6px, -6px) ;
+	}
+
 }
 
 .menu-button {
@@ -1288,6 +1308,7 @@ li {
 	padding: 0 100px; 
 	display: none;
 	align-self: flex-end;
+	transition:all 1s;
 
 	@include respond-min($bp-narrow) {
 	
@@ -1297,8 +1318,7 @@ li {
 		flex-direction: row;
 		display: flex; 
 		height: auto;
-		// width:auto;
-
+		
 	 }
 	@include respond-min($bp-wide) {
 			
@@ -1307,11 +1327,13 @@ li {
 	 }
 
 	 &.active {
-
+		padding-top:5vh;
 	 	// display: block;
-	 	background-color:rgba(255,255,255,0.8);
-		height:100%;
+	 	background-color:$color-highlight;
+		height:auto;
+		padding-bottom:50vh;
 		flex-direction: column;
+		display: flex;
 
 	 }
 
@@ -1319,14 +1341,22 @@ li {
 
 .menu-btn {
 
+	transition:all 1s;
+	cursor:pointer;
 	font-family: 'Montserrat-Hairline';
 	text-transform: uppercase;
 	color:$color-primary;
 	font-size:0.8em;
-	display:block;
+	// display:block;
 
 	&.active {
 		width: 100%;
+		// flex-grow: 2;
+		border-top:1px white solid;
+		color:$color-secondary;
+		padding: 5vh 0;
+		// background-color:$color-highlight;
+
 	}
 }
 
@@ -1348,15 +1378,27 @@ li {
 
 .login-box {
 
+
+	transform: scale(0.7);
+
+    transform-origin: 100%;
 	position:absolute;
 	right:0;
 	top:0;
 	transition: all 1s;
+	margin: 15px 15px 0px 0px;
+	@include respond-min($bp-narrow) {
+		margin: 25px 25px 0px 0px;
+		transform: scale(.8);
 
-	margin: 25px 50px 0px 0px;
+	}
+	@include respond-min($bp-mid) {
+		margin: 25px 50px 0px 0px;
+		transform: scale(1);
+	 }
 
 	&.active {
-		margin: 5px 50px 0px 0px;
+		margin-top: 5px!important;
 	}
 }
 
@@ -1364,12 +1406,25 @@ li {
 .search-box {
 	position:absolute;
 	left:0;
-	margin: 25px 0px 0px 50px;
-	// border: 1px solid red;
 	transition: all 1s;
 
+	margin: 15px 0px 0px 15px;
+	@include respond-min($bp-narrow) {
+		margin: 25px 0px 0px 25px;
+
+	 }
+	@include respond-min($bp-mid) {
+		margin: 25px 0px 0px 50px;
+
+	 }
+	@include respond-min($bp-wide) {
+	 }
+	@include respond-min($bp-huge) {
+	 }
+
+
 	&.active {
-		margin: 5px 0px 0px 50px;
+		margin-top: 5px!important;
 	}
 }
 
@@ -1378,6 +1433,8 @@ li {
 	display: inline-block;
 	transform:translateY(7px);
 	cursor:pointer;
+
+
 }
 
 
@@ -1392,6 +1449,17 @@ li {
 	color:$color-primary;
 	cursor:pointer;
 	font-size: 0.8em;
+	display:none;
+
+	@include respond-min($bp-narrow) {
+ 	}
+	@include respond-min($bp-mid) {
+	display:inline-block;
+	 }
+	@include respond-min($bp-wide) {
+	 }
+	@include respond-min($bp-huge) {
+	 }
 
 }
 
@@ -1445,7 +1513,7 @@ li {
 .logo-header-shield {
 	padding-top:20px;
 	display:block;
-	width:10vw;
+	width:10vh;
 	margin: 0 auto;
 	transition: all 1s;
 
