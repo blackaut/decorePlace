@@ -35,6 +35,15 @@ module.exports.tasks = {
 				'bake'
 			]
 		},
+
+		favoritos: {
+			files: ['index_base.html','favoritos/index_section.html'],
+			tasks: [
+				'compileCSS',
+				'clean:tempCSS',
+				'bake'
+			]
+		},
 		contacto: {
 			files: ['index_base.html','contacto/index_section.html'],
 			tasks: [
@@ -124,6 +133,13 @@ module.exports.tasks = {
 
 		js: {
 			files: ['<%=config.js.fileList%>','productos/productos.js'],
+			tasks: [
+				'uglify',
+				'newer:copy:modernizr'
+			]
+		},
+		js: {
+			files: ['<%=config.js.fileList%>','checkout/checkout.js'],
 			tasks: [
 				'uglify',
 				'newer:copy:modernizr'

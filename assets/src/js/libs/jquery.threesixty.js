@@ -36,7 +36,7 @@ jQuery.fn.threesixty = function(options){
 		parent = pic.parent();
 		//Binding the progress bar
 		var progressBg = $("<div></div>").css({width:parent.width()-200, height:10, backgroundColor:"white", position:"absolute","bottom":60,left:100 }).addClass("progressBg");
-		var progressBar = $("<div></div>").css({width:0, height:10, backgroundColor:"white", position:"absolute","bottom":60,left:100 }).data("progress",0).addClass("progressBar");
+		// var progressBar = $("<div></div>").css({width:0, height:10, backgroundColor:"white", position:"absolute","bottom":60,left:100 }).data("progress",0).addClass("progressBar");
 		var overlay;
 		try {
 		 overlay = $("<div></div>").css({cursor:"wait", width:pic.width(), height:pic.height(),  position:"absolute","top":0,left:0 }).addClass("overlay");
@@ -50,7 +50,7 @@ jQuery.fn.threesixty = function(options){
 		overlay.click(function(e) { e.preventDefault(); e.stopPropagation(); });
 		overlay.mousedown(function(e) { e.preventDefault(); e.stopPropagation(); });
 
-		parent.append(overlay).append(progressBg).append(progressBar);
+		// parent.append(overlay).append(progressBg).append(progressBar);
 		// pic.css({cursor:"all-scroll"});
 		
 
@@ -66,15 +66,15 @@ jQuery.fn.threesixty = function(options){
 					pic.attr("srcset", $(this).attr("srcset"))
 				}	
 
-				var progress = pic.parent().find(".progressBar");
-				totalProgress++;
-				var maxsize = pic.parent().find(".progressBg").width();
-				var newWidth = (totalProgress/options.images.length)*maxsize;
-				progress.stop(true,true).animate({width:newWidth},250);
-				if (totalProgress == options.images.length-1)
-				{	loaded=true;
-					pic.parent().find(".overlay, .progressBar, .progressBg").remove();
-				}
+				// var progress = pic.parent().find(".progressBar");
+				// totalProgress++;
+				// var maxsize = pic.parent().find(".progressBg").width();
+				// var newWidth = (totalProgress/options.images.length)*maxsize;
+				// progress.stop(true,true).animate({width:newWidth},250);
+				// if (totalProgress == options.images.length-1)
+				// {	loaded=true;
+				// 	pic.parent().find(".overlay, .progressBar, .progressBg").remove();
+				// }
 			});
 			cache.push(o); 
 		});

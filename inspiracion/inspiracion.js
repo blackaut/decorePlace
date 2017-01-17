@@ -1,6 +1,5 @@
 console.log("inspiracion.js");
 
-
 FBZ.inspiracion = {
 		init : function () {
 			FBZ.inspiracion.populate();

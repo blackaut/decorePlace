@@ -2,7 +2,6 @@
  * Author:
  * Fabz
  */
-
 // require("./libs/skrollr");
 // require("./libs/picturefill");
 
@@ -12,7 +11,6 @@
 		$(window).load(function() {
 
 		});
-
 
 	$(function() {
 
@@ -111,7 +109,6 @@
 		FBZ.control.updateNumbersLoginBox(0,0);
 
 		},
-
 
 		updateNumbersLoginBox: function (favoritos,comprados) {
 
@@ -872,6 +869,19 @@
 				}
 		},
 
+/// comprar 
+
+		addProductToFavourites : function (e) {
+			e.stopPropagation();
+
+		},
+
+		addProductToFavourites : function (e) {
+			e.stopPropagation();
+
+		},
+
+
 /// ligthbox
 
 		createProductBox : function (e) {
@@ -988,7 +998,7 @@
 
 		closeLightbox : function () {
 
-				// console.log("close");
+				console.log("close");
 				// console.log(FBZ.model.currentSection,FBZ.model.filterProducts);
 				$('#lightbox').find(".close-button-lightbox").off("click",FBZ.control.closeLightbox);
 				FBZ.control.fadeDivRemove( $('#lightbox'));
@@ -1002,10 +1012,9 @@
 
 			},
 
-// burger menu 
+			// burger menu 
 			activateBurger: function () {
 
-				// var menuButton = document.getElementById('menuButton');
 				FBZ.view.$menuButton.on("click",FBZ.control.onClickBurger);
 
 			},
@@ -1049,13 +1058,15 @@
 					if (value.prod_destacado.toString() == "true") {
 							FBZ.control.injectFeaturedProduct(value,key);
 							FBZ.control.injectFavouriteProduct(value,key);
-
+							
 							// console.log(key, "prod destacado:",value);
 							FBZ.view.sliderHomeControl.append("<div class='slider-dot'></div>")
 							
 						}
 				});
 
+				FBZ.control.activateFeaturedProducts();
+				FBZ.control.activateFavouriteProducts();
 
 				FBZ.model.sliderTotalImage  = FBZ.view.sliderHomeControl.children().length-1;
 
@@ -1077,6 +1088,9 @@
 				// FBZ.control.setupFeaturedSlider();
 
 		},
+
+
+
 
 		injectFavouriteProduct : function (obj,key) {
 
@@ -1122,12 +1136,19 @@
 			// console.log(FBZ.view.$favouriteProducts,currentProduct);
 
 			FBZ.view.$favouriteProducts.append(currentProduct);
-			FBZ.view.$favouriteProducts.children().on("click",FBZ.control.createProductBox);
-			FBZ.view.$favouriteProducts.children().on("click",FBZ.control.deleteInterval);
 
 		},
 
 
+
+		activateFavouriteProducts : function () {
+			
+			FBZ.view.$favouriteProducts.children().on("click",FBZ.control.deleteInterval);
+			FBZ.view.$favouriteProducts.children().on("click",FBZ.control.createProductBox);
+			FBZ.view.$favouriteProducts.children().on("mouseover",FBZ.control.load360);
+			FBZ.view.$favouriteProducts.children().find(".login-box-heart-svg").on("click",FBZ.control.addProductToFavourites);
+
+		},
 
 		injectFeaturedProduct : function (obj,key) {
 
@@ -1175,17 +1196,22 @@
 									"</div>"+
 								"</div>";
 			 // console.log(currentProduct, FBZ.view.$featureProducts);
-			
+
 			FBZ.model.featuredProducts.push(currentProduct);
 
 			FBZ.view.$featureProducts.append(currentProduct);
-			FBZ.view.$featureProducts.children().on("click",FBZ.control.createProductBox);
-			FBZ.view.$featureProducts.children().on("click",FBZ.control.deleteInterval);
-
+			
 			// var $currentCategory = $("."+ obj.prod_categoria);
 			// console.log($currentCategory,"<li class='element-category-product'><a>"+obj.prod_nombre+"</a></li>");
 			// FBZ.view.$featureProducts.append("<li class='element-category-product'><a>"+obj.prod_nombre+"</a></li>");
 		},
+
+		activateFeaturedProducts : function () {
+			FBZ.view.$featureProducts.children().on("click",FBZ.control.createProductBox);
+			FBZ.view.$featureProducts.children().on("click",FBZ.control.deleteInterval);
+			FBZ.view.$featureProducts.children().on("mouseover",FBZ.control.load360);
+			FBZ.view.$featureProducts.children().find(".buy-button").on("click",FBZ.control.addProductToBasket);
+		}, 
 
 
 		onDotClick : function (e) {

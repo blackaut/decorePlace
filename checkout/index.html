@@ -74,7 +74,114 @@
 
 			<div id="mainContent" class="main" role="main">
 
-				<section class="section" data-name="#section-name">
+				<section class="checkout" data-name="#checkout">
+
+					<ol class="checkout-steps">
+						<li class="step-checkout checkout-arrow"><a class="step">checkout</a></li>
+						<li class="step-detalles checkout-negative-arrow"><a class="step">detalles</a></li>
+						<li class="step-pago steps checkout-arrow"><a class="step">pago</a></li>
+					</ol>
+
+					<div class="checkout-container checkout-products-container">
+						<h3 class="checkout-title">Mi Bolsa</h3>
+						
+						<div class="checkout-product">
+							<img class='product-image-checkout' alt=' product' src='../assets/img/chair_dummy.png'>
+							
+							<div class='product-info-checkout'>
+								<p class='item-name'>item name</p>
+								<p class='item-price'>230.000 CLP</p>
+							</div>
+							
+							<div class="amount">
+								<a class="add-one">+</a>
+									<input type="amount" name="amount">
+								<a class="substract-one">-</a>
+							</div>
+							<div class="checkout-sub-total">230.000 CLP</div>
+						</div>
+						<div class="checkout-total"><span class="total-text">total : </span>230.000 CLP</div>
+					</div>
+					<!-- end checkout -->
+
+					<div class="checkout-container checkout-details-container">
+						<h3 class="checkout-title">Datos de Envio</h3>
+								<fieldset class="form-fieldset">
+									<div class="form-controlGroup form-half">
+										<label class="form-label" for="first_name">Nombre</label>
+										<div class="form-controlGroup-inputWrapper">
+											<input class="form-input  form_el" name="first_name" type="text" id="text" required/>
+										</div>
+									</div>
+
+									<div class="form-controlGroup form-half">
+										<label class="form-label" for="last_name">Apellido</label>
+										<div class="form-controlGroup-inputWrapper">
+										<input class="form-input " name="last_name" type="text" id="text" class="form_el" placeholder="" required/>
+										</div>
+									</div>
+
+									<div class="form-controlGroup">
+										<label class="form-label" for="address">Dirección</label>
+										<div class="form-controlGroup-inputWrapper">
+										<input class="form-input" name="direccion" type="direccion" id="direccion" class="form_el" placeholder="" required/>
+										</div>
+									</div>
+
+									<div class="form-controlGroup">
+										<label class="form-label" for="comuna">Comuna</label>
+										<div class="form-controlGroup-inputWrapper">
+											<input class="form-input" name="comuna" type="comnua" id="comuna" class="form_el" placeholder="" required/>
+										</div>
+									</div>
+
+									<div class="form-controlGroup form-half">
+										<label class="form-label " for="email">Teléfono</label>
+										<div class="form-controlGroup-inputWrapper">
+											<input class="form-input " name="telefono" type="telefono" id="email" class="form_el" placeholder="" required/>
+										</div>
+									</div>
+									<div class="form-controlGroup form-half">
+										<label class="form-label" for="email">Región</label>
+										<select class="form-input" name="region" type="region" id="region" class="form_el" placeholder="" required/>
+												<option value="13">RM - Región Metropolitana</option>
+												<option value="15">XV - Región de Arica y Parinacota</option>
+												<option value="1">I - Región de Tarapacá</option>
+												<option value="2">II - Región de Antofagasta</option>
+												<option value="3">III - Región de Atacama</option>
+												<option value="4">VI - Región de Coquimbo</option>
+												<option value="5">V - Región de Valparaíso</option>
+												<option value="6">VI - Región del Gral. B. O`Higgins</option>
+												<option value="7">VII - Región del Maule</option>
+												<option value="8">VIII - Región del Bío-Bío</option>
+												<option value="9">IX - Región de La Araucanía</option>
+												<option value="14">XIV - Región de los Ríos</option>
+												<option value="10">X - Región de Los Lagos</option>
+												<option value="11">XI - Región de Aysén</option>
+												<option value="12">XII - Región de Magallanes</option>
+											</select>
+										</div>
+									</fieldset>
+							</form>
+					</div>
+
+					<!-- end datos de envio -->
+
+					<div class="checkout-container checkout-payment-container">
+						<div class="payment-options">
+							<h3 class="checkout-title">Metodos de Pago</h3>
+						</div>
+						<div class="payment-resume">
+							<h3 class="checkout-title">Resumen de tu Pedido</h3>
+							<div class="checkout-sub-total"><span class="resume-text">sub-total : </span> 230.000 CLP</div>
+							<div class="checkout-sub-total subtotal-envio"><span class="resume-text">envio : </span>30.000 CLP</div>
+							<div class="checkout-total"><span class="resume-text">total : </span>230.000 CLP</div>
+						</div>
+					</div>
+
+					<!-- end metodos de pago -->
+				<button class="btn btn--primary main-checkout-button">seguir</button>
+
 				</section>
 
 										<footer>
@@ -184,7 +291,7 @@
 						</div>
 
 						<div class="login-box-icon icon-bag">
-							<a href='/carritodecompras' onClick='history.go(0)'>
+							<a href='/checkout' onClick='history.go(0)'>
 								<div class="small-number"></div>
 								<img class="login-box-icon-svg" src="../assets/img/bag.svg" alt="bag"/> 
 							</a>
