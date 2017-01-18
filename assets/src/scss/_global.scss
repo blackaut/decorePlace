@@ -113,13 +113,14 @@
 			padding-right:20px;
 			text-align: center;
 	}
+}
 
 	.checkout-total {
-			
+
 			margin-top:3vh;
 			width:80vw;
 			font-family: "Montserrat-Regular";
-			padding-right:20px;
+			// padding-right:20px;
 			text-align: right;
 
 			.total-text {
@@ -128,8 +129,6 @@
 				color:$color-primary;
 			}
 }
-}
-
 .checkout-title {
 	text-align:center;
 }
@@ -1370,13 +1369,11 @@ footer {
 
 // global
 
-body, html {
+ html {
 	margin: 0;
-	// overflow-x: hidden;
+	overflow-x: hidden;
 	transition: opacity 400ms;
-	width:100%;
-	max-width: 100%;
-
+	width:100vw;
 
 }
 
@@ -1560,6 +1557,7 @@ li {
 	font-size: 8px;
 	line-height: 12px;
 	transition:all 1s;
+	z-index:100;
 
 }
 
@@ -1628,6 +1626,15 @@ li {
 
 .login-box-heart-svg {
 	padding-top:5px;
+}
+
+.login-box-heart-svg-full {
+	position: absolute;
+	top:0;
+	left:0;
+	opacity:0;
+	transition:.5s all;
+	z-index:0;
 }
 
 .login-box-icon-svg {

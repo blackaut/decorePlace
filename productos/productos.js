@@ -13,6 +13,7 @@
 			FBZ.products.activateCategoryAccordeon();
 			// determines if the url includes a # for special section or 
 			FBZ.products.determineProductBehavior();
+			FBZ.control.activateFavouriteHearts();
 
 		},
 		resetResults : function () {

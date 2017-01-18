@@ -54,6 +54,8 @@
 		sliderClock: {} ,
 		sliderTime: 5000,
 		sliderTotalImage:0,
+		favouriteProductsCollection: [],
+		purchasedProductsCollection: [],
 
 
 	};
@@ -81,6 +83,7 @@
 		$siteMenu			:$('.site-menu'),
 		$siteButton			:$('.menu-btn'),
 		$burgerParts		:$('.burger-part'),
+
 		// FBZ.view.sliderHomeControl
 	};
 
@@ -108,14 +111,63 @@
 		// this function add the top number of the login box, first favoirtes and the carrito
 		FBZ.control.updateNumbersLoginBox(0,0);
 
+		FBZ.control.activateFavouriteHearts();
+
+
 		},
+
+		activateFavouriteHearts: function () {
+			FBZ.view.hearts = $(".icon-heart");
+			FBZ.view.hearts.append("<img class='login-box-heart-svg login-box-heart-svg-full' src='/assets/img/heart_full.svg' alt='heart'>");
+			FBZ.view.hearts.on("mouseout",FBZ.control.onRollOutHeart);
+			FBZ.view.hearts.on("mouseover",FBZ.control.onRollOverHeart);
+			FBZ.view.hearts.on("click",FBZ.control.onClickHeart);
+		
+		},
+
+		onRollOverHeart : function (e) {
+
+			$(e.currentTarget).find(".login-box-heart-svg-full").css("opacity",1);
+			console.log("over");
+		},
+		onRollOutHeart : function (e) {
+
+			$(e.currentTarget).find(".login-box-heart-svg-full").css("opacity",0);
+
+		},
+
+
+		onClickHeart : function (e) {
+			e.stopPropagation();
+			console.log( $(e.currentTarget).parent()[0]);
+			
+			var key;
+			var obj;
+				// console.log("triggered CLICK lightbox");
+				 key  = $(e.currentTarget).parent()[0].attributes.productKey.nodeValue;
+				 obj = FBZ.model.products[key];
+
+
+			 FBZ.control.addProductToFavourites(obj);
+		},
+
+		onClickPurchase : function (e) {
+			e.stopPropagation();
+			var key;
+			var obj;
+				// console.log("triggered CLICK lightbox");
+				 key  = $(e.currentTarget).parent().parent().parent().parent()[0].attributes.productKey.nodeValue;
+			console.log( $(e.currentTarget).parent().parent().parent().parent()[0], key);
+				 obj = FBZ.model.products[key];
+
+			 FBZ.control.addProductToPurchased(obj);
+		},
+
 
 		updateNumbersLoginBox: function (favoritos,comprados) {
 
-			FBZ.model.currentFavouritedProducts = favoritos;
-			FBZ.model.currentShoppedProducts = comprados;
-			var heartIconToDisplay = FBZ.model.currentFavouritedProducts;
-			var bagIconToDisplay = FBZ.model.currentShoppedProducts;
+			var heartIconToDisplay = FBZ.model.currentFavouritedProducts = favoritos;
+			var bagIconToDisplay = FBZ.model.currentShoppedProducts  = comprados;
 
 			// to max out the numbers
 			if ( heartIconToDisplay > 99 ) {
@@ -129,7 +181,7 @@
 			// $('.small-number')(0).hide();
 
 			if ( heartIconToDisplay > 0 ) {
-				FBZ.view.$numberIconHeart.append(heartIconToDisplay);	
+				FBZ.view.$numberIconHeart.html(heartIconToDisplay);	
 				FBZ.control.fadeShow(FBZ.view.$numberIconHeart);
 
 			}else {
@@ -137,7 +189,7 @@
 			}
 
 			if ( bagIconToDisplay > 0 ) {
-				FBZ.view.$numberIconBag.append(bagIconToDisplay);
+				FBZ.view.$numberIconBag.html(bagIconToDisplay);
 				FBZ.control.fadeShow(FBZ.view.$numberIconBag);	
 
 			} else {
@@ -145,6 +197,21 @@
 			}
 		},
 
+/// comprar 
+
+		addProductToFavourites : function (product) {
+
+			FBZ.model.favouriteProductsCollection.push(product);
+			console.dir(FBZ.model.favouriteProductsCollection);
+			FBZ.control.updateNumbersLoginBox(parseInt(FBZ.model.currentFavouritedProducts)+1,FBZ.model.currentShoppedProducts);
+		},
+
+		addProductToPurchased : function (product) {
+			console.log(product);
+			FBZ.model.purchasedProductsCollection.push(product);
+			console.dir(FBZ.model.purchasedProductsCollection);
+			FBZ.control.updateNumbersLoginBox(FBZ.model.currentFavouritedProducts,FBZ.model.currentShoppedProducts+1);
+		},
 
 
 		// jumpTofavoritos: function () {
@@ -869,18 +936,6 @@
 				}
 		},
 
-/// comprar 
-
-		addProductToFavourites : function (e) {
-			e.stopPropagation();
-
-		},
-
-		addProductToFavourites : function (e) {
-			e.stopPropagation();
-
-		},
-
 
 /// ligthbox
 
@@ -909,7 +964,7 @@
 			}
 			// console.dir(obj); 
 
-			FBZ.model.lightbox =  "<div id='lightbox'><a class='close-button-lightbox'><img src='../assets/img/close.svg' alt='close'></a>"
+			FBZ.model.lightbox =  "<div id='lightbox' productId='"+obj.prod_id+"' productKey='"+key+"' ><a class='close-button-lightbox'><img src='../assets/img/close.svg' alt='close'></a>"
 			+"<div id='lightbox-content'>" //insert clicked link's href into img src
 				+"<div class='lightbox-sidebar'>"
 					+"<picture class='product-view-01'>"
@@ -978,6 +1033,8 @@
 				$('#lightbox').addClass("is-fading-in"); 
 				// console.log($('#lightbox'));
 				$('#lightbox').find(".close-button-lightbox").on("click",FBZ.control.closeLightbox); 
+				$('#lightbox').find(".buy-button").on("click",FBZ.control.onClickPurchase); 
+
 
 				// add the 360 rotation
 			// var key  = e.currentTarget.attributes.productKey.nodeValue;
