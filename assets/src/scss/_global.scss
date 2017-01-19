@@ -753,13 +753,38 @@ bold {
 	position: relative;
 }
 
+.category-avatars-container {
+
+	display:flex;
+	flex-direction:column;
+	width:100%;
+	padding-right:8px;
+	flex-wrap:wrap;
+	
+	@include respond-min($bp-narrow) {
+	}
+ @include respond-min($bp-mid) {
+	flex-direction:row;
+  }
+// @include respond-min($bp-wide) {
+//  }
+// @include respond-min($bp-huge) {
+//  }
+
+
+}
+
+
 .category-avatar {
 	height:200px;
 	// background-color:$color-highlight;
-	display:inline-block;
+	// display:inline-block;
 	margin:10px;
 	font-size:0.8em;
 	margin-top:30px;
+	flex-grow:2;
+	cursor:pointer;
+	transition: all 1s;
 
 	&.dorm {
 		background-image: url("../../img/bedroom_0.jpg");
@@ -774,6 +799,7 @@ bold {
 	&.dorm-ninos {
 		background-image: url("../../img/bedroom_0.jpg");
 		background-size: cover;
+
 	}
 	&.comedor {
 		background-image: url("../../img/dinningroom_0.jpg");
@@ -783,11 +809,19 @@ bold {
 		background-image: url("../../img/living_0.jpg");
 		background-size: cover;
 	}
+	
+	&:hover {
+
+		// background-position: 0%;
+		
+	}
+
 
 }
 .category-avatar-text {
 	transform:translateY(-150%);
 }
+
 
 
 
@@ -1044,6 +1078,10 @@ bold {
 }
 
 .products-container {
+
+	 display: flex;
+    flex-wrap: wrap;
+
 	.product-info {
 		display:inline-block;
 		text-align: center;
