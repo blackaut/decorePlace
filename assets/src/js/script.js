@@ -96,10 +96,10 @@
 		FBZ.control.determineSection();
 		FBZ.control.onResizeStage();
 		FBZ.control.defineStage();
+		FBZ.control.scrolltoTop();
 
 		FBZ.control.resizeContentBlock();
 		FBZ.control.multilingualEngine(); 
-		FBZ.control.removeLoadingCurtain();
 		// FBZ.control.formFunctionality();
 		FBZ.control.headerTransform();
 
@@ -114,7 +114,17 @@
 		FBZ.control.activateFavouriteHearts();
 
 
+		FBZ.control.removeLoadingCurtain();
+
 		},
+
+		scrolltoTop : function () {
+
+			// just to avoid bug that overlaps the non collapsed logo
+			$(this).scrollTop(0);
+			console.log("scrool");
+		},
+
 
 		activateFavouriteHearts: function () {
 			FBZ.view.hearts = $(".icon-heart");
